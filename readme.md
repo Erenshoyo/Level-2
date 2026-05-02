@@ -45,6 +45,7 @@ If your environment supports running `.ts` files directly, you can also execute 
 - Data binning and analytics-friendly transformations
 - Stateless vs stateful patterns in JavaScript
 - TypeScript basics: primitive types, arrays, tuples, objects, functions, and type annotations
+- Advanced TypeScript: union and intersection types, type aliases, destructuring, spread/rest operators, nullable types, unknown and never types, optional chaining, nullish coalescing, and ternary operators
 
 ## Project structure
 
@@ -55,24 +56,30 @@ If your environment supports running `.ts` files directly, you can also execute 
     - `primitive.ts` — primitive TypeScript types: `string`, `number`, `boolean`, `undefined`, `null`
     - `nonPrimitive.ts` — arrays, tuples, object types, optional properties, and `readonly` fields
     - `test.ts` — simple console output example
+    - `specialPrimitiveType.ts` — special types: nullable, unknown, and never with examples
+    - `questionMark.ts` — ternary operator, nullish coalescing, and optional chaining
+    - `unionAndIntersection.ts` — union types, intersection types, and combined type examples
+    - `typeAlias.ts` — reusable type aliases for objects and functions
+    - `destructuring.ts` — object and array destructuring with aliases
+    - `spreadAndRestOperators.ts` — spread operator for arrays/objects and rest operator for functions
 
 - `PreVideos/`
   - `Module-2/`
-    - `MO2VO3.js` — data manipulation, grouping, and reduce usage
-    - `MO2VO5.js` — aggregation utilities and subtotal examples
-    - `MO2VO6.js` — array helpers and transformation patterns
-    - `MO2VO7.js` — lookup and denormalization examples
-    - `MO2VO8.js` — time-series binning and resampling demo
-    - `MO2VO9.js` — additional aggregation patterns
-    - `MO2VO10.js` — summary and advanced examples
+    - `MO2VO3.js` — array utilities: `sort`, `flat`, `some`, and `Array.from` with examples like pagination
+    - `MO2VO5.js` — using `reduce` for cart subtotal calculation and finding the best scorer from players
+    - `MO2VO6.js` — creating a lookup table from posts array using `reduce`
+    - `MO2VO7.js` — grouping and aggregating survey responses by count using `reduce`
+    - `MO2VO8.js` — grouping sales data by category with total revenue and item count using `reduce`
+    - `MO2VO9.js` — denormalizing data: client-side join of users and posts arrays
+    - `MO2VO10.js` — binning time series events into 30-minute intervals and counting them
   - `Module-3/`
-    - `MO3VO1.js` — stateless versus stateful concepts overview
-    - `MO3VO2.js` — example script for runtime demos
-    - `MO3VO3.js` — follow-up examples and practice patterns
-    - `MO3VO4.js` — utility and helper snippets
-    - `MO3VO5.js` — aggregation and stateful example patterns
-    - `MO3VO6.js` — event handling and state demonstration
-    - `MO3VO7.js` — practical exercises with data processing
-    - `MO3VO8.js` — advanced JavaScript patterns
-    - `MO3VO9.js` — demo scripts for core concepts
-    - `MO3VO10.js` — wrap-up and summary notes
+    - `MO3VO1.js` — stateless vs stateful concepts with object methods and lexical environment
+    - `MO3VO2.js` — basic class constructor and methods refresher with counter examples
+    - `MO3VO3.js` — empty file
+    - `MO3VO4.js` — empty file
+    - `MO3VO5.js` — empty file
+    - `MO3VO6.js` — empty file
+    - `MO3VO7.js` — empty file
+    - `MO3VO8.js` — empty file
+    - `MO3VO9.js` — empty file
+    - `MO3VO10.js` — empty file
