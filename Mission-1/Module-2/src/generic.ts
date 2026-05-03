@@ -21,7 +21,13 @@ const coordinates2: Coordinates<string, string> = ["20", "30"];
 
 //! We cannot use generics like this -"const userList: GenericArray<objects>", if done this way it generalizes the whole array of object.
 //* This is the proper way -> "const userList: GenericArray<{ name: string; age: number }>", we need to mention the element types like in the example.
-const userList: GenericArray<{ name: string; age: number }> = [
+//* A better approach would be to define the types separately and use them inside the generics array.
+
+type User = {
+  name: string;
+  age: number;
+};
+const userList: GenericArray<User> = [
   {
     name: "Asif Shahriar",
     age: 22,
