@@ -6,6 +6,7 @@ This repository contains short JavaScript and TypeScript examples used in the PH
 
 - `PreVideos/` — JavaScript demo scripts for Module 2 and Module 3.
 - `Mission-1/Module-1/` — TypeScript examples showing function syntax, primitives, non-primitives, and object typing.
+- `Mission-1/Module-2/` — TypeScript generics, interfaces, type assertions, and advanced type patterns.
 
 ## How to run
 
@@ -18,12 +19,17 @@ cd "PreVideos/Module-2"
 node MO2VO3.js
 ```
 
-### TypeScript examples (`Mission-1/Module-1`)
+### TypeScript examples (`Mission-1/Module-1` and `Mission-1/Module-2`)
 
 Compile with the TypeScript compiler if available:
 
 ```bash
 cd "Mission-1/Module-1"
+npx tsc --project tsconfig.json
+```
+
+```bash
+cd "Mission-1/Module-2"
 npx tsc --project tsconfig.json
 ```
 
@@ -33,7 +39,7 @@ Then run the emitted JavaScript from `dist/`, for example:
 node dist/test.js
 ```
 
-If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src`.
+If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src` or `Mission-1/Module-2/src`.
 
 ## Topics covered
 
@@ -62,6 +68,15 @@ If your environment supports running `.ts` files directly, you can also execute 
     - `typeAlias.ts` — reusable type aliases for objects and functions
     - `destructuring.ts` — object and array destructuring with aliases
     - `spreadAndRestOperators.ts` — spread operator for arrays/objects and rest operator for functions
+
+- `Mission-1/Module-2/`
+  - `tsconfig.json` — TypeScript compiler configuration for Module 2
+  - `src/`
+    - `generic.ts` — generic arrays and typed tuples
+    - `genericFunction.ts` — generic functions and tuple helpers with dynamic return types
+    - `genericsWithInterface.ts` — generics in interfaces and optional generic defaults
+    - `interface.ts` — interface syntax, extension, and callable function interfaces
+    - `typeAssertion.ts` — type assertion examples with `as`, runtime type narrowing, and custom error typing
 
 - `PreVideos/`
   - `Module-2/`
