@@ -1,10 +1,25 @@
 # Backend Journey with PH Level-2
 
-This repository contains short JavaScript and TypeScript examples used in the PH Level-2 course. The `PreVideos` folder groups JavaScript examples by module, and `Mission-1` contains TypeScript fundamentals and advanced type system concepts.
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen?style=for-the-badge)
+![Learning](https://img.shields.io/badge/Learning-Backend%20Engineering-blue?style=for-the-badge)
 
-## Overview
+A comprehensive collection of JavaScript and TypeScript implementations exploring functional programming, advanced type systems, and data transformation patterns.
 
-### Learning Path
+## 📌 Purpose
+
+This repository serves as a practical learning sandbox for mastering backend fundamentals. It bridges the gap between core JavaScript utility patterns and robust, type-safe TypeScript architectures. By providing focused, real-world examples—such as client-side joins, data aggregation, and advanced generics—this project aims to demonstrate scalable, production-ready coding practices.
+
+## 📑 Table of Contents
+
+- [🚀 Learning Path](#-learning-path)
+- [💡 Key Concepts](#-key-concepts)
+- [📁 Project Structure](#-project-structure)
+- [🛠️ Getting Started](#️-getting-started)
+- [📊 Progress Tracker](#-progress-tracker)
+
+## 🚀 Learning Path
 
 **Phase 1: JavaScript Essentials (PreVideos)**
 
@@ -27,7 +42,7 @@ This repository contains short JavaScript and TypeScript examples used in the PH
   - Optional chaining (`?.`) and nullish coalescing (`??`) for safe property access
   - Ternary operators for conditional logic
 
-**Phase 3: TypeScript Advanced Types (Mission-1/Module-2)**
+**Phase 3: TypeScript Advanced Types (Mission-1/Module-2 & Module-3)**
 
 - **Generics**: Build reusable types and functions that work with any type
   - Generic arrays, tuples, and typed functions with type parameters
@@ -52,41 +67,12 @@ This repository contains short JavaScript and TypeScript examples used in the PH
   - `Readonly<T>`: prevent property mutations
   - `Record<K, T>`: create typed dictionaries
 - **as const Assertion**: Lock objects to literal types for immutability and type inference
+- **OOP and Classes**:
+  - Class definitions and constructor patterns
+  - Parameter properties for concise instantiation
+  - Methods and properties visibility
 
-## How to run
-
-### JavaScript examples
-
-Use `node` from the script folder, for example:
-
-```bash
-cd "PreVideos/Module-2"
-node MO2VO3.js
-```
-
-### TypeScript examples (`Mission-1/Module-1` and `Mission-1/Module-2`)
-
-Compile with the TypeScript compiler if available:
-
-```bash
-cd "Mission-1/Module-1"
-npx tsc --project tsconfig.json
-```
-
-```bash
-cd "Mission-1/Module-2"
-npx tsc --project tsconfig.json
-```
-
-Then run the emitted JavaScript from `dist/`, for example:
-
-```bash
-node dist/test.js
-```
-
-If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src` or `Mission-1/Module-2/src`.
-
-## Topics covered
+## 💡 Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
 - Array transformations with `reduce`: subtotals, aggregation, and max calculations
@@ -103,8 +89,9 @@ If your environment supports running `.ts` files directly, you can also execute 
 - Enums and `as const` assertions for immutable literal types
 - Conditional types and mapped types for advanced type transformations
 - Utility types: Pick, Omit, Required, Partial, Readonly, and Record for common patterns
+- Object-Oriented Programming: classes and constructors in TypeScript
 
-## Project structure
+## 📁 Project Structure
 
 - `Mission-1/Module-1/`
   - `tsconfig.json` — TypeScript compiler configuration
@@ -136,6 +123,11 @@ If your environment supports running `.ts` files directly, you can also execute 
     - `mappedTypes.ts` — mapped types with `[key in keyof T]` for type transformation
     - `utilityTypes.ts` — built-in utility types: Pick, Omit, Required, Partial, Readonly, Record
 
+- `Mission-1/Module-3/`
+  - `tsconfig.json` — TypeScript compiler configuration for Module 3
+  - `src/`
+    - `class.ts` — class definitions, constructor patterns, and parameter properties
+
 - `PreVideos/`
   - `Module-2/`
     - `MO2VO3.js` — array utilities: `sort`, `flat`, `some`, and `Array.from` with examples like pagination
@@ -156,3 +148,51 @@ If your environment supports running `.ts` files directly, you can also execute 
     - `MO3VO8.js` — empty file
     - `MO3VO9.js` — empty file
     - `MO3VO10.js` — empty file
+
+## 🛠️ Getting Started
+
+### JavaScript examples
+
+Use `node` from the script folder, for example:
+
+```bash
+cd "PreVideos/Module-2"
+node MO2VO3.js
+```
+
+### TypeScript examples (`Mission-1/Module-1`, `Mission-1/Module-2`, and `Mission-1/Module-3`)
+
+Compile with the TypeScript compiler if available:
+
+```bash
+cd "Mission-1/Module-1"
+npx tsc --project tsconfig.json
+```
+
+```bash
+cd "Mission-1/Module-2"
+npx tsc --project tsconfig.json
+```
+
+```bash
+cd "Mission-1/Module-3"
+npx tsc --project tsconfig.json
+```
+
+Then run the emitted JavaScript from `dist/`, for example:
+
+```bash
+node dist/test.js
+```
+
+If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src`, `Mission-1/Module-2/src`, or `Mission-1/Module-3/src`.
+
+## 📊 Progress Tracker
+
+| Module        | Location           | Status | Description                                                     |
+| :------------ | :----------------- | :----: | :-------------------------------------------------------------- |
+| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning           |
+| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present |
+| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                   |
+| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types   |
+| **TS Module** | Mission-1/Module-3 |   ⚠️   | Class-based TypeScript example in progress                      |
