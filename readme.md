@@ -1,12 +1,57 @@
 # Backend Journey with PH Level-2
 
-This repository contains short JavaScript and TypeScript examples used in the PH Level-2 course. The `PreVideos` folder groups JavaScript examples by module, and `Mission-1/Module-1` contains TypeScript fundamentals.
+This repository contains short JavaScript and TypeScript examples used in the PH Level-2 course. The `PreVideos` folder groups JavaScript examples by module, and `Mission-1` contains TypeScript fundamentals and advanced type system concepts.
 
-## Repository overview
+## Overview
 
-- `PreVideos/` — JavaScript demo scripts for Module 2 and Module 3.
-- `Mission-1/Module-1/` — TypeScript examples showing function syntax, primitives, non-primitives, and object typing.
-- `Mission-1/Module-2/` — TypeScript generics, interfaces, type assertions, and advanced type patterns.
+### Learning Path
+
+**Phase 1: JavaScript Essentials (PreVideos)**
+
+- Master functional programming with array methods (`sort`, `flat`, `some`, `Array.from`)
+- Advanced data transformations using `reduce` for aggregations, lookups, and grouping
+- Real-world patterns: denormalization, binning time-series data, and client-side joins
+- Object-oriented concepts: stateless vs stateful approaches and basic class constructors
+
+**Phase 2: TypeScript Fundamentals (Mission-1/Module-1)**
+
+- Understand primitive types (`string`, `number`, `boolean`, `undefined`, `null`)
+- Learn compound types: arrays, tuples, objects with optional and readonly properties
+- Master function typing and callback patterns
+- Advanced typing techniques:
+  - Union types (`|`) and intersection types (`&`) for flexible type combinations
+  - Type aliases for reusable type declarations
+  - Destructuring objects and arrays with type safety
+  - Spread operator for arrays/objects and rest parameters in functions
+  - Special types: nullable, unknown, never for edge cases
+  - Optional chaining (`?.`) and nullish coalescing (`??`) for safe property access
+  - Ternary operators for conditional logic
+
+**Phase 3: TypeScript Advanced Types (Mission-1/Module-2)**
+
+- **Generics**: Build reusable types and functions that work with any type
+  - Generic arrays, tuples, and typed functions with type parameters
+  - Default generic parameters for flexibility
+  - Constraints to enforce rules on generic types using `extends`
+  - keyof operator to work with object keys dynamically
+- **Interfaces vs Types**: Define contracts for objects and functions
+  - Interface extension and callable interfaces
+  - Generics within interfaces
+- **Type Assertions**: Cast types with confidence using the `as` keyword
+- **Enums**: Create fixed sets of related constants (though type unions with `as const` are preferred)
+- **Conditional Types**: Types that depend on type conditions
+  - Using `extends` to create branching type logic
+- **Mapped Types**: Transform existing types into new ones
+  - Iterate over object keys with `[key in keyof T]`
+  - Build generic type mappers
+- **Utility Types**: Built-in TypeScript helpers
+  - `Pick<T, K>`: select specific properties
+  - `Omit<T, K>`: exclude specific properties
+  - `Required<T>`: make all properties mandatory
+  - `Partial<T>`: make all properties optional
+  - `Readonly<T>`: prevent property mutations
+  - `Record<K, T>`: create typed dictionaries
+- **as const Assertion**: Lock objects to literal types for immutability and type inference
 
 ## How to run
 
@@ -52,6 +97,12 @@ If your environment supports running `.ts` files directly, you can also execute 
 - Stateless vs stateful patterns in JavaScript
 - TypeScript basics: primitive types, arrays, tuples, objects, functions, and type annotations
 - Advanced TypeScript: union and intersection types, type aliases, destructuring, spread/rest operators, nullable types, unknown and never types, optional chaining, nullish coalescing, and ternary operators
+- TypeScript generics with type parameters and default values
+- Generic constraints and the `keyof` operator for type-safe access
+- Interfaces and type assertions for type safety
+- Enums and `as const` assertions for immutable literal types
+- Conditional types and mapped types for advanced type transformations
+- Utility types: Pick, Omit, Required, Partial, Readonly, and Record for common patterns
 
 ## Project structure
 
@@ -72,11 +123,18 @@ If your environment supports running `.ts` files directly, you can also execute 
 - `Mission-1/Module-2/`
   - `tsconfig.json` — TypeScript compiler configuration for Module 2
   - `src/`
-    - `generic.ts` — generic arrays and typed tuples
+    - `generic.ts` — generic arrays and typed tuples with examples
     - `genericFunction.ts` — generic functions and tuple helpers with dynamic return types
-    - `genericsWithInterface.ts` — generics in interfaces and optional generic defaults
+    - `genericsWithInterface.ts` — generics in interfaces with optional generic defaults
     - `interface.ts` — interface syntax, extension, and callable function interfaces
-    - `typeAssertion.ts` — type assertion examples with `as`, runtime type narrowing, and custom error typing
+    - `typeAssertion.ts` — type assertion examples with `as`, runtime type narrowing
+    - `constraints.ts` — generic constraints using `extends` keyword to enforce rules
+    - `keyOfConstraints.ts` — `keyof` operator for type-safe object key access
+    - `enum.ts` — enum declarations and comparison with type unions
+    - `asConst.ts` — `as const` assertion for immutable literal types
+    - `conditionalType.ts` — conditional types using `extends` for branching type logic
+    - `mappedTypes.ts` — mapped types with `[key in keyof T]` for type transformation
+    - `utilityTypes.ts` — built-in utility types: Pick, Omit, Required, Partial, Readonly, Record
 
 - `PreVideos/`
   - `Module-2/`
