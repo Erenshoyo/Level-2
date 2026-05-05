@@ -7,19 +7,19 @@
 
 A comprehensive collection of JavaScript and TypeScript implementations exploring functional programming, advanced type systems, and data transformation patterns.
 
-## 📌 Purpose
+## Purpose
 
 This repository serves as a practical learning sandbox for mastering backend fundamentals. It bridges the gap between core JavaScript utility patterns and robust, type-safe TypeScript architectures. By providing focused, real-world examples—such as client-side joins, data aggregation, and advanced generics—this project aims to demonstrate scalable, production-ready coding practices.
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [🚀 Learning Path](#-learning-path)
-- [💡 Key Concepts](#-key-concepts)
-- [📁 Project Structure](#-project-structure)
-- [🛠️ Getting Started](#️-getting-started)
-- [📊 Progress Tracker](#-progress-tracker)
+- [Learning Path](#-learning-path)
+- [Key Concepts](#-key-concepts)
+- [Project Structure](#-project-structure)
+- [Getting Started](#️-getting-started)
+- [Progress Tracker](#-progress-tracker)
 
-## 🚀 Learning Path
+## Learning Path
 
 **Phase 1: JavaScript Essentials (PreVideos)**
 
@@ -72,7 +72,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - Parameter properties for concise instantiation
   - Methods and properties visibility
 
-## 💡 Key Concepts
+## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
 - Array transformations with `reduce`: subtotals, aggregation, and max calculations
@@ -90,8 +90,9 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Conditional types and mapped types for advanced type transformations
 - Utility types: Pick, Omit, Required, Partial, Readonly, and Record for common patterns
 - Object-Oriented Programming: classes and constructors in TypeScript
+- Access modifiers, inheritance, and type guards for safer class-based patterns
 
-## 📁 Project Structure
+## Project Structure
 
 - `Mission-1/Module-1/`
   - `tsconfig.json` — TypeScript compiler configuration
@@ -126,7 +127,11 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - `Mission-1/Module-3/`
   - `tsconfig.json` — TypeScript compiler configuration for Module 3
   - `src/`
+    - `accessModifier.ts` — access modifiers: `public`, `protected`, `private`, and `readonly`
     - `class.ts` — class definitions, constructor patterns, and parameter properties
+    - `inheritance.ts` — inheritance with subclass extension and superclass constructors
+    - `instanceOfGuard.ts` — `instanceof` type guards and runtime narrowing with class instances
+    - `typeGuard.ts` — type guard examples using `typeof` and `in`
 
 - `PreVideos/`
   - `Module-2/`
@@ -149,7 +154,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
     - `MO3VO9.js` — empty file
     - `MO3VO10.js` — empty file
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### JavaScript examples
 
@@ -187,12 +192,12 @@ node dist/test.js
 
 If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src`, `Mission-1/Module-2/src`, or `Mission-1/Module-3/src`.
 
-## 📊 Progress Tracker
+## Progress Tracker
 
-| Module        | Location           | Status | Description                                                     |
-| :------------ | :----------------- | :----: | :-------------------------------------------------------------- |
-| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning           |
-| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present |
-| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                   |
-| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types   |
-| **TS Module** | Mission-1/Module-3 |   ⚠️   | Class-based TypeScript example in progress                      |
+| Module        | Location           | Status | Description                                                        |
+| :------------ | :----------------- | :----: | :----------------------------------------------------------------- |
+| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning              |
+| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present    |
+| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                      |
+| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types      |
+| **TS Module** | Mission-1/Module-3 |   ⚠️   | TypeScript classes, access modifiers, inheritance, and type guards |
