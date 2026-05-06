@@ -71,6 +71,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - Class definitions and constructor patterns
   - Parameter properties for concise instantiation
   - Methods and properties visibility
+  - Inheritance, Abstraction, encapsulation, polymorphism, getters/setters, and static members
 
 ## Key Concepts
 
@@ -127,10 +128,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - `Mission-1/Module-3/`
   - `tsconfig.json` — TypeScript compiler configuration for Module 3
   - `src/`
+    - `abstraction.ts` — abstraction with interfaces and abstract classes
     - `accessModifier.ts` — access modifiers: `public`, `protected`, `private`, and `readonly`
     - `class.ts` — class definitions, constructor patterns, and parameter properties
+    - `encapsulation.ts` — encapsulation with private/protected members and hidden methods
+    - `getterSetter.ts` — getter and setter usage for controlled property access
     - `inheritance.ts` — inheritance with subclass extension and superclass constructors
     - `instanceOfGuard.ts` — `instanceof` type guards and runtime narrowing with class instances
+    - `polymorphism.ts` — polymorphism through method overriding and shared interfaces
+    - `static.ts` — static properties and methods on classes
     - `typeGuard.ts` — type guard examples using `typeof` and `in`
 
 - `PreVideos/`
@@ -194,10 +200,10 @@ If your environment supports running `.ts` files directly, you can also execute 
 
 ## Progress Tracker
 
-| Module        | Location           | Status | Description                                                        |
-| :------------ | :----------------- | :----: | :----------------------------------------------------------------- |
-| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning              |
-| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present    |
-| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                      |
-| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types      |
-| **TS Module** | Mission-1/Module-3 |   ⚠️   | TypeScript classes, access modifiers, inheritance, and type guards |
+| Module        | Location           | Status | Description                                                                        |
+| :------------ | :----------------- | :----: | :--------------------------------------------------------------------------------- |
+| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning                              |
+| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present                    |
+| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                                      |
+| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types                      |
+| **TS Module** | Mission-1/Module-3 |   ✅   | TypeScript classes, OOP principles, access modifiers, inheritance, and type guards |
