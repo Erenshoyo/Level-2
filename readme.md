@@ -78,7 +78,9 @@ This repository serves as a practical learning sandbox for mastering backend fun
 
 - Understand frontend vs backend responsibilities
 - Learn how the web works from scratch, including requests, responses, and browser interactions
-- Build foundational knowledge for web application architecture
+- Master JavaScript module patterns: IIFE (Immediately Invoked Function Expressions)
+- Compare CommonJS and ES Modules (ESM) for module management
+- Build foundational knowledge for web application architecture and module systems
 
 ## Key Concepts
 
@@ -99,6 +101,10 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Utility types: Pick, Omit, Required, Partial, Readonly, and Record for common patterns
 - Object-Oriented Programming: classes and constructors in TypeScript
 - Access modifiers, inheritance, and type guards for safer class-based patterns
+- JavaScript module patterns: IIFE for scope isolation and avoiding global namespace pollution
+- CommonJS (`module.exports`, `require`) for server-side module management
+- ES Modules (ESM) for standardized module syntax with `import`/`export`
+- Module bundling and how frontend and backend leverage different module systems
 
 ## Project Structure
 
@@ -156,6 +162,16 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - `Module-5/`
     - `FrontendVSBackendEssentials.ts` — frontend vs backend essentials
     - `How_The_Web_Works_From_Scratch.ts` — web fundamentals from scratch
+    - `IIFE.js` — immediately invoked function expressions
+    - `commonJS_ESM.js` — CommonJS module examples
+    - `commonJS_ESM2.js` — CommonJS vs ESM comparison examples
+    - `commonJS_ESM3.js` — additional CommonJS and ESM patterns
+    - `esm1.mjs` — ES module patterns (first example)
+    - `esm2.mjs` — ES module patterns (second example)
+    - `utils/` — utility module folder
+      - `add.js` — addition utility function
+      - `sub.js` — subtraction utility function
+      - `index.js` — utility module index
 
 - `PreVideos/`
   - `Module-2/`
@@ -226,4 +242,4 @@ If your environment supports running `.ts` files directly, you can also execute 
 | **TS Module**     | Mission-1/Module-2                     |   ✅   | Generics, interfaces, utility types, mapped/conditional types                      |
 | **TS Module**     | Mission-1/Module-3                     |   ✅   | TypeScript classes, OOP principles, access modifiers, inheritance, and type guards |
 | **TS Assignment** | Mission-1/Module-4 : Assignment Module |   ✅   | Practical TypeScript assignment with problem solving, blogs, and utility types     |
-| **TS Module**     | Mission-2/Module-5                     |   ✅   | Frontend vs backend fundamentals and how the web works from scratch                |
+| **TS Module**     | Mission-2/Module-5                     |   ✅   | JavaScript module patterns (IIFE, CommonJS, ESM), frontend vs backend fundamentals |
