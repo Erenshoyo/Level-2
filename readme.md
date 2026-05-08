@@ -74,7 +74,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - Inheritance, abstraction, encapsulation, polymorphism, getters/setters, and static members
 - **Assignment Practice**: Apply TypeScript concepts in Module 4 with problem-solving, blogs, and utility types
 
-**Phase 4: Web & Backend Essentials (Mission-2/Module-5)**n
+**Phase 4: Web & Backend Essentials (Mission-2/Module-5)**
 
 - Understand frontend vs backend responsibilities
 - Learn how the web works from scratch, including requests, responses, and browser interactions
