@@ -71,7 +71,14 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - Class definitions and constructor patterns
   - Parameter properties for concise instantiation
   - Methods and properties visibility
-  - Inheritance, Abstraction, encapsulation, polymorphism, getters/setters, and static members
+  - Inheritance, abstraction, encapsulation, polymorphism, getters/setters, and static members
+- **Assignment Practice**: Apply TypeScript concepts in Module 4 with problem-solving, blogs, and utility types
+
+**Phase 4: Web & Backend Essentials (Mission-2/Module-5)**n
+
+- Understand frontend vs backend responsibilities
+- Learn how the web works from scratch, including requests, responses, and browser interactions
+- Build foundational knowledge for web application architecture
 
 ## Key Concepts
 
@@ -139,6 +146,17 @@ This repository serves as a practical learning sandbox for mastering backend fun
     - `static.ts` — static properties and methods on classes
     - `typeGuard.ts` — type guard examples using `typeof` and `in`
 
+- `Mission-1/Module-4 : Assignment Module/`
+  - `README.md` — assignment overview and problem summaries
+  - `solution.ts` — TypeScript assignment solutions for 7 problems
+  - `blog-1.md` — blog on `unknown` vs `any` and type narrowing
+  - `blog-2.md` — blog on `Pick` and `Omit` utility types
+
+- `Mission-2/`
+  - `Module-5/`
+    - `FrontendVSBackendEssentials.ts` — frontend vs backend essentials
+    - `How_The_Web_Works_From_Scratch.ts` — web fundamentals from scratch
+
 - `PreVideos/`
   - `Module-2/`
     - `MO2VO3.js` — array utilities: `sort`, `flat`, `some`, and `Array.from` with examples like pagination
@@ -171,7 +189,7 @@ cd "PreVideos/Module-2"
 node MO2VO3.js
 ```
 
-### TypeScript examples (`Mission-1/Module-1`, `Mission-1/Module-2`, and `Mission-1/Module-3`)
+### TypeScript examples (`Mission-1/Module-1`, `Mission-1/Module-2`, `Mission-1/Module-3`, and `Mission-2/Module-5`)
 
 Compile with the TypeScript compiler if available:
 
@@ -200,10 +218,12 @@ If your environment supports running `.ts` files directly, you can also execute 
 
 ## Progress Tracker
 
-| Module        | Location           | Status | Description                                                                        |
-| :------------ | :----------------- | :----: | :--------------------------------------------------------------------------------- |
-| **JS Module** | PreVideos/Module-2 |   ✅   | Array utilities, `reduce`, lookup tables, and binning                              |
-| **JS Module** | PreVideos/Module-3 |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present                    |
-| **TS Module** | Mission-1/Module-1 |   ✅   | Core TypeScript types and syntax fundamentals                                      |
-| **TS Module** | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped/conditional types                      |
-| **TS Module** | Mission-1/Module-3 |   ✅   | TypeScript classes, OOP principles, access modifiers, inheritance, and type guards |
+| Module            | Location                               | Status | Description                                                                        |
+| :---------------- | :------------------------------------- | :----: | :--------------------------------------------------------------------------------- |
+| **JS Module**     | PreVideos/Module-2                     |   ✅   | Array utilities, `reduce`, lookup tables, and binning                              |
+| **JS Module**     | PreVideos/Module-3                     |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present                    |
+| **TS Module**     | Mission-1/Module-1                     |   ✅   | Core TypeScript types and syntax fundamentals                                      |
+| **TS Module**     | Mission-1/Module-2                     |   ✅   | Generics, interfaces, utility types, mapped/conditional types                      |
+| **TS Module**     | Mission-1/Module-3                     |   ✅   | TypeScript classes, OOP principles, access modifiers, inheritance, and type guards |
+| **TS Assignment** | Mission-1/Module-4 : Assignment Module |   ✅   | Practical TypeScript assignment with problem solving, blogs, and utility types     |
+| **TS Module**     | Mission-2/Module-5                     |   ✅   | Frontend vs backend fundamentals and how the web works from scratch                |
