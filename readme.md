@@ -2,6 +2,8 @@
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen?style=for-the-badge)
 ![Learning](https://img.shields.io/badge/Learning-Backend%20Engineering-blue?style=for-the-badge)
 
