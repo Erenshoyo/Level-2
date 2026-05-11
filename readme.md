@@ -234,7 +234,7 @@ cd "PreVideos/Module-2"
 node MO2VO3.js
 ```
 
-### TypeScript examples (`Mission-1/Module-1`, `Mission-1/Module-2`, `Mission-1/Module-3`, and `Mission-2/Module-5`)
+### TypeScript examples (`Mission-1/Module-1`, `Mission-1/Module-2`, `Mission-1/Module-3`, `Mission-2/Module-5` and `Mission-2/Module-6`)
 
 Compile with the TypeScript compiler if available:
 
