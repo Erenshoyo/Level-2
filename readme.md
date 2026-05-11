@@ -76,13 +76,19 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - Inheritance, abstraction, encapsulation, polymorphism, getters/setters, and static members
 - **Assignment Practice**: Apply TypeScript concepts in Module 4 with problem-solving, blogs, and utility types
 
-**Phase 4: Web & Backend Essentials (Mission-2/Module-5)**
+**Phase 4: Web & Backend Essentials (Mission-2/Module-5 & Module-6)**
 
 - Understand frontend vs backend responsibilities
 - Learn how the web works from scratch, including requests, responses, and browser interactions
 - Master JavaScript module patterns: IIFE (Immediately Invoked Function Expressions)
 - Compare CommonJS and ES Modules (ESM) for module management
 - Build foundational knowledge for web application architecture and module systems
+- Build a complete HTTP server using Node.js built-in modules
+- Implement MVC architecture: routes, controllers, services, and data models
+- Parse HTTP requests and serialize responses with proper headers
+- Create type-safe data models using TypeScript interfaces
+- Manage file-based persistence with JSON database
+- Configure environment variables with dotenv
 
 ## Key Concepts
 
@@ -107,6 +113,13 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - CommonJS (`module.exports`, `require`) for server-side module management
 - ES Modules (ESM) for standardized module syntax with `import`/`export`
 - Module bundling and how frontend and backend leverage different module systems
+- HTTP protocol fundamentals: requests, responses, methods (GET, POST, PATCH, PUT, DELETE), headers, and status codes
+- MVC architecture: separation of concerns through routes, controllers, services, and models
+- Request body parsing and response serialization with proper content-type headers
+- Type-safe server implementation using TypeScript interfaces and types
+- File-based data persistence with JSON database operations
+- Environment configuration management with dotenv for sensitive data
+- RESTful API design principles and endpoint structure
 
 ## Project Structure
 
@@ -174,6 +187,20 @@ This repository serves as a practical learning sandbox for mastering backend fun
       - `add.js` — addition utility function
       - `sub.js` — subtraction utility function
       - `index.js` — utility module index
+  - `Module-6/`
+    - `tsconfig.json` — TypeScript compiler configuration
+    - `package.json` — project dependencies (tsx, dotenv, @types/node)
+    - `.env` — environment variables (PORT configuration)
+    - `src/`
+      - `server.ts` — HTTP server entry point with routing and request handling
+      - `config/index.ts` — configuration management (PORT, database path)
+      - `routes/route.ts` — URL routing logic and HTTP method matching
+      - `controller/product.controller.ts` — request handlers and business logic
+      - `service/product.service.ts` — data operations and CRUD logic
+      - `types/product.type.ts` — TypeScript interfaces for Product model
+      - `utils/parseBody.ts` — HTTP request body parsing utility
+      - `utils/sendResponse.ts` — HTTP response serialization utility
+      - `database/db.json` — file-based JSON database for products
 
 - `PreVideos/`
   - `Module-2/`
@@ -234,14 +261,96 @@ node dist/test.js
 
 If your environment supports running `.ts` files directly, you can also execute the source files from `Mission-1/Module-1/src`, `Mission-1/Module-2/src`, or `Mission-1/Module-3/src`.
 
+### Backend Server Project (Mission-2/Module-6)
+
+A complete HTTP server implementation with MVC architecture and type-safe TypeScript.
+
+**Setup:**
+
+```bash
+cd "Mission-2/Module-6"
+npm install
+```
+
+**Running the server:**
+
+```bash
+# Using tsx for TypeScript execution
+npm start
+
+# Or manually
+tsx src/server.ts
+```
+
+**API Endpoints:**
+
+```bash
+# Get all products
+curl http://localhost:3000/products
+
+# Get product by ID
+curl http://localhost:3000/products/1
+
+# Create product
+curl -X POST http://localhost:3000/products \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Product","price":29.99,"quantity":10}'
+
+# Update product
+curl -X PATCH http://localhost:3000/products/1 \
+  -H "Content-Type: application/json" \
+  -d '{"price":39.99}'
+
+# Delete product
+curl -X DELETE http://localhost:3000/products/1
+```
+
 ## Progress Tracker
 
-| Module            | Location                               | Status | Description                                                                        |
-| :---------------- | :------------------------------------- | :----: | :--------------------------------------------------------------------------------- |
-| **JS Module**     | PreVideos/Module-2                     |   ✅   | Array utilities, `reduce`, lookup tables, and binning                              |
-| **JS Module**     | PreVideos/Module-3                     |   ⚠️   | Stateful vs stateless logic, OOP examples, placeholders present                    |
-| **TS Module**     | Mission-1/Module-1                     |   ✅   | Core TypeScript types and syntax fundamentals                                      |
-| **TS Module**     | Mission-1/Module-2                     |   ✅   | Generics, interfaces, utility types, mapped/conditional types                      |
-| **TS Module**     | Mission-1/Module-3                     |   ✅   | TypeScript classes, OOP principles, access modifiers, inheritance, and type guards |
-| **TS Assignment** | Mission-1/Module-4 : Assignment Module |   ✅   | Practical TypeScript assignment with problem solving, blogs, and utility types     |
-| **TS Module**     | Mission-2/Module-5                     |   ✅   | JavaScript module patterns (IIFE, CommonJS, ESM), frontend vs backend fundamentals |
+| Module                 | Location           | Status | Description                                                       |
+| :--------------------- | :----------------- | :----: | :---------------------------------------------------------------- |
+| **JavaScript**         | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning               |
+| **JavaScript**         | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, some placeholders      |
+| **TypeScript**         | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators   |
+| **TypeScript**         | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types   |
+| **TypeScript OOP**     | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards |
+| **TypeScript Applied** | Mission-1/Module-4 |   ✅   | 7 coding challenges, type narrowing blog, utility types blog      |
+| **Web Fundamentals**   | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns             |
+| **Backend Project**    | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence   |
+
+## 🎓 Learning Recommendations
+
+**For Beginners:**
+
+1. Start with `PreVideos/Module-2` to understand functional programming concepts
+2. Move to `Mission-1/Module-1` to learn TypeScript basics
+3. Progress through `Mission-1/Module-2` and `Module-3` for advanced types and OOP
+
+**For Intermediate Learners:**
+
+1. Review `PreVideos` to strengthen JavaScript fundamentals
+2. Study `Mission-1/Module-2` for advanced type system features
+3. Explore `Mission-1/Module-4` assignment module for real-world problems
+4. Review `Mission-2/Module-5` for web architecture understanding
+
+**For Building Projects:**
+
+1. Complete `Mission-1` for TypeScript proficiency
+2. Study `Mission-2/Module-5` for HTTP protocol understanding
+3. Work with `Mission-2/Module-6` to build full-featured backend servers
+
+## 📝 Key Files Summary
+
+| Concept              | File                                                                      | Module |
+| -------------------- | ------------------------------------------------------------------------- | ------ |
+| Primitive Types      | [primitive.ts](Mission-1/Module-1/src/primitive.ts)                       | M1-M1  |
+| Union & Intersection | [unionAndIntersection.ts](Mission-1/Module-1/src/unionAndIntersection.ts) | M1-M1  |
+| Generics             | [generic.ts](Mission-1/Module-2/src/generic.ts)                           | M1-M2  |
+| Interfaces           | [interface.ts](Mission-1/Module-2/src/interface.ts)                       | M1-M2  |
+| Mapped Types         | [mappedTypes.ts](Mission-1/Module-2/src/mappedTypes.ts)                   | M1-M2  |
+| Utility Types        | [utilityTypes.ts](Mission-1/Module-2/src/utilityTypes.ts)                 | M1-M2  |
+| Classes              | [class.ts](Mission-1/Module-3/src/class.ts)                               | M1-M3  |
+| Inheritance          | [inheritance.ts](Mission-1/Module-3/src/inheritance.ts)                   | M1-M3  |
+| Assignment Solutions | [solution.ts](Mission-1/Module-4/solution.ts)                             | M1-M4  |
+| HTTP Server          | [server.ts](Mission-2/Module-6/src/server.ts)                             | M2-M6  |
+| Data Models          | [product.type.ts](Mission-2/Module-6/src/types/product.type.ts)           | M2-M6  |
