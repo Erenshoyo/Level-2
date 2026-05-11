@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Apple iPhone 15",
+    "description": "6.1-inch smartphone with A16 Bionic chip and dual-camera system",
+    "price": 999
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24",
+    "description": "Flagship Android smartphone with AMOLED display and AI features",
+    "price": 899
+  },
+  {
+    "id": 3,
+    "name": "Sony WH-1000XM5",
+    "description": "Wireless noise-canceling over-ear headphones with premium sound",
+    "price": 399
+  },
+  {
+    "id": 4,
+    "name": "Dell XPS 13",
+    "description": "Compact ultrabook laptop with Intel Core i7 processor",
+    "price": 1299
+  },
+  {
+    "id": 5,
+    "name": "Apple MacBook Air M3",
+    "description": "Lightweight laptop powered by Apple M3 chip",
+    "price": 1499
+  },
+  {
+    "id": 6,
+    "name": "Logitech MX Master 3S",
+    "description": "Advanced wireless mouse designed for productivity and creators",
+    "price": 99
+  },
+  {
+    "id": 7,
+    "name": "Canon EOS R50",
+    "description": "Mirrorless camera with 4K video recording support",
+    "price": 799
+  },
+  {
+    "id": 8,
+    "name": "Nike Air Max 270",
+    "description": "Comfortable lifestyle sneakers with Max Air cushioning",
+    "price": 150
+  },
+  {
+    "id": 9,
+    "name": "Adidas Ultraboost 22",
+    "description": "Running shoes with responsive Boost midsole technology",
+    "price": 180
+  },
+  {
+    "id": 10,
+    "name": "Samsung 55-inch QLED TV",
+    "description": "4K smart television with vibrant QLED display",
+    "price": 899
+  },
+  {
+    "id": 11,
+    "name": "JBL Flip 6",
+    "description": "Portable Bluetooth speaker with waterproof design",
+    "price": 129
+  },
+  {
+    "id": 12,
+    "name": "PlayStation 5",
+    "description": "Next-generation gaming console with ultra-fast SSD",
+    "price": 499
+  },
+  {
+    "id": 13,
+    "name": "Xbox Series X",
+    "description": "Powerful gaming console with 4K gaming support",
+    "price": 499
+  },
+  {
+    "id": 14,
+    "name": "Amazon Kindle Paperwhite",
+    "description": "Waterproof e-reader with glare-free display",
+    "price": 189
+  },
+  {
+    "id": 15,
+    "name": "Fitbit Charge 6",
+    "description": "Fitness tracker with heart-rate and sleep monitoring",
+    "price": 159
+  },
+  {
+    "id": 16,
+    "name": "GoPro HERO12 Black",
+    "description": "Action camera with 5.3K video and image stabilization",
+    "price": 399
+  },
+  {
+    "id": 17,
+    "name": "Dyson V15 Detect",
+    "description": "Cordless vacuum cleaner with laser dust detection",
+    "price": 749
+  },
+  {
+    "id": 18,
+    "name": "Bose SoundLink Flex",
+    "description": "Portable Bluetooth speaker with rich balanced audio",
+    "price": 149
+  },
+  {
+    "id": 19,
+    "name": "Asus ROG Strix G16",
+    "description": "Gaming laptop with RTX graphics and high refresh display",
+    "price": 1799
+  },
+  {
+    "id": 20,
+    "name": "Cream",
+    "description": "Good quality!!",
+    "price": 50
+  },
+  {
+    "id": 1778492202215,
+    "name": "Testing 2",
+    "description": "Product description",
+    "price": 1000
+  },
+  {
+    "id": 1778492243658,
+    "name": "Testing 3",
+    "description": "Product description",
+    "price": 500
+  }
+]
