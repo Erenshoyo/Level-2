@@ -4,6 +4,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen?style=for-the-badge)
 ![Learning](https://img.shields.io/badge/Learning-Backend%20Engineering-blue?style=for-the-badge)
 
@@ -90,6 +91,19 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Manage file-based persistence with JSON database
 - Configure environment variables with dotenv
 
+**Phase 5: Database Integration (Mission-2/Module-7)**
+
+- Master SQL fundamentals: data types, table creation, and basic queries
+- Understand PostgreSQL as a relational database system
+- Learn database connection management with connection pooling
+- Implement CRUD operations using parameterized queries for security
+- Handle database schema design with primary keys, constraints, and defaults
+- Manage database migrations and initialization scripts
+- Integrate Express.js with PostgreSQL using the pg library
+- Build RESTful APIs backed by relational databases
+- Implement partial updates using COALESCE for flexible data modification
+- Configure environment variables for database connections
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -120,58 +134,65 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - File-based data persistence with JSON database operations
 - Environment configuration management with dotenv for sensitive data
 - RESTful API design principles and endpoint structure
+- SQL fundamentals: data types (numbers, character, date/time, JSON, UUID, arrays)
+- PostgreSQL database management: connection pooling, schema design, and queries
+- Database integration with Node.js: pg library for PostgreSQL connections
+- CRUD operations with parameterized queries for SQL injection prevention
+- Database schema creation with constraints, defaults, and auto-incrementing keys
+- Partial updates using COALESCE for handling optional fields in updates
 
 ## Project Structure
 
-- `Mission-1/Module-1/`
-  - `tsconfig.json` — TypeScript compiler configuration
-  - `src/`
-    - `function.ts` — function declaration styles, arrow functions, object methods, and callback examples
-    - `primitive.ts` — primitive TypeScript types: `string`, `number`, `boolean`, `undefined`, `null`
-    - `nonPrimitive.ts` — arrays, tuples, object types, optional properties, and `readonly` fields
-    - `test.ts` — simple console output example
-    - `specialPrimitiveType.ts` — special types: nullable, unknown, and never with examples
-    - `questionMark.ts` — ternary operator, nullish coalescing, and optional chaining
-    - `unionAndIntersection.ts` — union types, intersection types, and combined type examples
-    - `typeAlias.ts` — reusable type aliases for objects and functions
-    - `destructuring.ts` — object and array destructuring with aliases
-    - `spreadAndRestOperators.ts` — spread operator for arrays/objects and rest operator for functions
+- `Mission-1/`
+  - `Module-1/`
+    - `tsconfig.json` — TypeScript compiler configuration
+    - `src/`
+      - `function.ts` — function declaration styles, arrow functions, object methods, and callback examples
+      - `primitive.ts` — primitive TypeScript types: `string`, `number`, `boolean`, `undefined`, `null`
+      - `nonPrimitive.ts` — arrays, tuples, object types, optional properties, and `readonly` fields
+      - `test.ts` — simple console output example
+      - `specialPrimitiveType.ts` — special types: nullable, unknown, and never with examples
+      - `questionMark.ts` — ternary operator, nullish coalescing, and optional chaining
+      - `unionAndIntersection.ts` — union types, intersection types, and combined type examples
+      - `typeAlias.ts` — reusable type aliases for objects and functions
+      - `destructuring.ts` — object and array destructuring with aliases
+      - `spreadAndRestOperators.ts` — spread operator for arrays/objects and rest operator for functions
 
-- `Mission-1/Module-2/`
-  - `tsconfig.json` — TypeScript compiler configuration for Module 2
-  - `src/`
-    - `generic.ts` — generic arrays and typed tuples with examples
-    - `genericFunction.ts` — generic functions and tuple helpers with dynamic return types
-    - `genericsWithInterface.ts` — generics in interfaces with optional generic defaults
-    - `interface.ts` — interface syntax, extension, and callable function interfaces
-    - `typeAssertion.ts` — type assertion examples with `as`, runtime type narrowing
-    - `constraints.ts` — generic constraints using `extends` keyword to enforce rules
-    - `keyOfConstraints.ts` — `keyof` operator for type-safe object key access
-    - `enum.ts` — enum declarations and comparison with type unions
-    - `asConst.ts` — `as const` assertion for immutable literal types
-    - `conditionalType.ts` — conditional types using `extends` for branching type logic
-    - `mappedTypes.ts` — mapped types with `[key in keyof T]` for type transformation
-    - `utilityTypes.ts` — built-in utility types: Pick, Omit, Required, Partial, Readonly, Record
+  - `Module-2/`
+    - `tsconfig.json` — TypeScript compiler configuration for Module 2
+    - `src/`
+      - `generic.ts` — generic arrays and typed tuples with examples
+      - `genericFunction.ts` — generic functions and tuple helpers with dynamic return types
+      - `genericsWithInterface.ts` — generics in interfaces with optional generic defaults
+      - `interface.ts` — interface syntax, extension, and callable function interfaces
+      - `typeAssertion.ts` — type assertion examples with `as`, runtime type narrowing
+      - `constraints.ts` — generic constraints using `extends` keyword to enforce rules
+      - `keyOfConstraints.ts` — `keyof` operator for type-safe object key access
+      - `enum.ts` — enum declarations and comparison with type unions
+      - `asConst.ts` — `as const` assertion for immutable literal types
+      - `conditionalType.ts` — conditional types using `extends` for branching type logic
+      - `mappedTypes.ts` — mapped types with `[key in keyof T]` for type transformation
+      - `utilityTypes.ts` — built-in utility types: Pick, Omit, Required, Partial, Readonly, Record
 
-- `Mission-1/Module-3/`
-  - `tsconfig.json` — TypeScript compiler configuration for Module 3
-  - `src/`
-    - `abstraction.ts` — abstraction with interfaces and abstract classes
-    - `accessModifier.ts` — access modifiers: `public`, `protected`, `private`, and `readonly`
-    - `class.ts` — class definitions, constructor patterns, and parameter properties
-    - `encapsulation.ts` — encapsulation with private/protected members and hidden methods
-    - `getterSetter.ts` — getter and setter usage for controlled property access
-    - `inheritance.ts` — inheritance with subclass extension and superclass constructors
-    - `instanceOfGuard.ts` — `instanceof` type guards and runtime narrowing with class instances
-    - `polymorphism.ts` — polymorphism through method overriding and shared interfaces
-    - `static.ts` — static properties and methods on classes
-    - `typeGuard.ts` — type guard examples using `typeof` and `in`
+  - `Module-3/`
+    - `tsconfig.json` — TypeScript compiler configuration for Module 3
+    - `src/`
+      - `abstraction.ts` — abstraction with interfaces and abstract classes
+      - `accessModifier.ts` — access modifiers: `public`, `protected`, `private`, and `readonly`
+      - `class.ts` — class definitions, constructor patterns, and parameter properties
+      - `encapsulation.ts` — encapsulation with private/protected members and hidden methods
+      - `getterSetter.ts` — getter and setter usage for controlled property access
+      - `inheritance.ts` — inheritance with subclass extension and superclass constructors
+      - `instanceOfGuard.ts` — `instanceof` type guards and runtime narrowing with class instances
+      - `polymorphism.ts` — polymorphism through method overriding and shared interfaces
+      - `static.ts` — static properties and methods on classes
+      - `typeGuard.ts` — type guard examples using `typeof` and `in`
 
-- `Mission-1/Module-4 : Assignment Module/`
-  - `README.md` — assignment overview and problem summaries
-  - `solution.ts` — TypeScript assignment solutions for 7 problems
-  - `blog-1.md` — blog on `unknown` vs `any` and type narrowing
-  - `blog-2.md` — blog on `Pick` and `Omit` utility types
+  - `Module-4 : Assignment Module/`
+    - `README.md` — assignment overview and problem summaries
+    - `solution.ts` — TypeScript assignment solutions for 7 problems
+    - `blog-1.md` — blog on `unknown` vs `any` and type narrowing
+    - `blog-2.md` — blog on `Pick` and `Omit` utility types
 
 - `Mission-2/`
   - `Module-5/`
@@ -201,6 +222,14 @@ This repository serves as a practical learning sandbox for mastering backend fun
       - `utils/parseBody.ts` — HTTP request body parsing utility
       - `utils/sendResponse.ts` — HTTP response serialization utility
       - `database/db.json` — file-based JSON database for products
+
+  - `Module-7/`
+    - `tsconfig.json` — TypeScript compiler configuration
+    - `package.json` — project dependencies (express, pg, dotenv, tsx, @types/express, @types/pg)
+    - `.env` — environment variables (DATABASE_URL for PostgreSQL connection)
+    - `src/`
+      - `server.ts` — Express server with PostgreSQL integration and user CRUD API
+      - `sql_basic.md` — comprehensive SQL fundamentals guide covering data types, queries, and PostgreSQL features
 
 - `PreVideos/`
   - `Module-2/`
@@ -305,18 +334,74 @@ curl -X PATCH http://localhost:3000/products/1 \
 curl -X DELETE http://localhost:3000/products/1
 ```
 
+### Database-Backed Server Project (Mission-2/Module-7)
+
+A complete Express.js server with PostgreSQL integration, implementing user management with full CRUD operations.
+
+**Setup:**
+
+```bash
+cd "Mission-2/Module-7"
+npm install
+```
+
+**Environment Configuration:**
+
+Create a `.env` file with your PostgreSQL connection string:
+
+```env
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
+```
+
+**Running the server:**
+
+```bash
+# Using tsx for TypeScript execution
+npm run dev
+
+# Or manually
+tsx watch ./src/server.ts
+```
+
+**API Endpoints:**
+
+```bash
+# Get server status
+curl http://localhost:5000/
+
+# Get all users
+curl http://localhost:5000/api/users
+
+# Get user by ID
+curl http://localhost:5000/api/users/1
+
+# Create user
+curl -X POST http://localhost:5000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","password":"secret123","age":25}'
+
+# Update user (partial update)
+curl -X PUT http://localhost:5000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Jane Doe","age":26}'
+
+# Delete user
+curl -X DELETE http://localhost:5000/api/users/1
+```
+
 ## Progress Tracker
 
-| Module                 | Location           | Status | Description                                                       |
-| :--------------------- | :----------------- | :----: | :---------------------------------------------------------------- |
-| **JavaScript**         | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning               |
-| **JavaScript**         | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, some placeholders      |
-| **TypeScript**         | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators   |
-| **TypeScript**         | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types   |
-| **TypeScript OOP**     | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards |
-| **TypeScript Applied** | Mission-1/Module-4 |   ✅   | 7 coding challenges, type narrowing blog, utility types blog      |
-| **Web Fundamentals**   | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns             |
-| **Backend Project**    | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence   |
+| Module                   | Location           | Status | Description                                                       |
+| :----------------------- | :----------------- | :----: | :---------------------------------------------------------------- |
+| **JavaScript**           | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning               |
+| **JavaScript**           | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, some placeholders      |
+| **TypeScript**           | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators   |
+| **TypeScript**           | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types   |
+| **TypeScript OOP**       | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards |
+| **TypeScript Applied**   | Mission-1/Module-4 |   ✅   | 7 coding challenges, type narrowing blog, utility types blog      |
+| **Web Fundamentals**     | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns             |
+| **Backend Project**      | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence   |
+| **Database Integration** | Mission-2/Module-7 |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations |
 
 ## 🎓 Learning Recommendations
 
@@ -338,6 +423,7 @@ curl -X DELETE http://localhost:3000/products/1
 1. Complete `Mission-1` for TypeScript proficiency
 2. Study `Mission-2/Module-5` for HTTP protocol understanding
 3. Work with `Mission-2/Module-6` to build full-featured backend servers
+4. Integrate `Mission-2/Module-7` for database-backed applications with PostgreSQL
 
 ## 📝 Key Files Summary
 
@@ -354,3 +440,5 @@ curl -X DELETE http://localhost:3000/products/1
 | Assignment Solutions | [solution.ts](Mission-1/Module-4/solution.ts)                             | M1-M4  |
 | HTTP Server          | [server.ts](Mission-2/Module-6/src/server.ts)                             | M2-M6  |
 | Data Models          | [product.type.ts](Mission-2/Module-6/src/types/product.type.ts)           | M2-M6  |
+| PostgreSQL Server    | [server.ts](Mission-2/Module-7/src/server.ts)                             | M2-M7  |
+| SQL Fundamentals     | [sql_basic.md](Mission-2/Module-7/src/sql_basic.md)                       | M2-M7  |
