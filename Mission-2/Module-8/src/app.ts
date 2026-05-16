@@ -5,6 +5,7 @@ import express, {
 } from "express";
 import dns from "dns";
 import { userRoute } from "./modules/user/user.route";
+import { profileRoute } from "./modules/profile/profile.route";
 
 dns.setDefaultResultOrder("ipv4first");
 const app: Application = express();
@@ -24,5 +25,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/users", userRoute);
+app.use("/api/profile", profileRoute);
 
 export default app;
