@@ -104,6 +104,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Implement partial updates using COALESCE for flexible data modification
 - Configure environment variables for database connections
 
+**Phase 6: Authentication & Authorization (Mission-2/Module-8)**
+
+- Build secure authentication flows with Express, PostgreSQL, bcryptjs, and JWT
+- Create user registration, login, and profile creation endpoints
+- Store passwords securely with hashing and validate user credentials at login
+- Generate access tokens with `jsonwebtoken` and manage token expiration
+- Use environment variables for `DATABASE_URL` and `JWT_SECRET`
+- Organize Express routes into modular controllers and service layers
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -113,6 +122,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Time-series binning and interval resampling
 - Data binning and analytics-friendly transformations
 - Stateless vs stateful patterns in JavaScript
+- Stack data structure example using a custom `Stack` class with `push`, `pop`, `peek`, and `isEmpty`
 - TypeScript basics: primitive types, arrays, tuples, objects, functions, and type annotations
 - Advanced TypeScript: union and intersection types, type aliases, destructuring, spread/rest operators, nullable types, unknown and never types, optional chaining, nullish coalescing, and ternary operators
 - TypeScript generics with type parameters and default values
@@ -133,6 +143,11 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Type-safe server implementation using TypeScript interfaces and types
 - File-based data persistence with JSON database operations
 - Environment configuration management with dotenv for sensitive data
+- Authentication and authorization with JWT and password hashing using bcryptjs
+- Modular Express router design for `/api/users`, `/api/auth`, and `/api/profile`
+- PostgreSQL relational tables and foreign key relationships for users and profiles
+- Express middleware parsing with `express.json()` and `express.urlencoded({ extended: true })`
+- `dns.setDefaultResultOrder("ipv4first")` for consistent network behavior on modern Node.js
 - RESTful API design principles and endpoint structure
 - SQL fundamentals: data types (numbers, character, date/time, JSON, UUID, arrays)
 - PostgreSQL database management: connection pooling, schema design, and queries
@@ -230,6 +245,17 @@ This repository serves as a practical learning sandbox for mastering backend fun
     - `src/`
       - `server.ts` — Express server with PostgreSQL integration and user CRUD API
       - `sql_basic.md` — comprehensive SQL fundamentals guide covering data types, queries, and PostgreSQL features
+  - `Module-8/`
+    - `package.json` — Node package manifest with Express, bcryptjs, jsonwebtoken, pg, tsx, and TypeScript
+    - `tsconfig.json` — TypeScript compiler configuration for Module 8
+    - `.env` — environment variables for PostgreSQL connection and JWT secret configuration
+    - `src/`
+      - `app.ts` — Express app setup with middleware and route registration
+      - `server.ts` — app entry point with database initialization
+      - `db/index.ts` — PostgreSQL pool setup and schema initialization for `users` and `profiles`
+      - `modules/auth/` — login route, controller, and JWT authentication service
+      - `modules/user/` — user CRUD routes, controller, and service with bcrypt password hashing
+      - `modules/profile/` — profile creation route and relational profile service
 
 - `PreVideos/`
   - `Module-2/`
@@ -243,7 +269,7 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - `Module-3/`
     - `MO3VO1.js` — stateless vs stateful concepts with object methods and lexical environment
     - `MO3VO2.js` — basic class constructor and methods refresher with counter examples
-    - `MO3VO3.js` — empty file
+    - `MO3VO3.js` — stack class example implementing `push`, `pop`, `peek`, `isEmpty`, and `print`
     - `MO3VO4.js` — empty file
     - `MO3VO5.js` — empty file
     - `MO3VO6.js` — empty file
@@ -389,12 +415,78 @@ curl -X PUT http://localhost:5000/api/users/1 \
 curl -X DELETE http://localhost:5000/api/users/1
 ```
 
+### Authentication Server Project (Mission-2/Module-8)
+
+A modular Express + PostgreSQL server with JWT login, password hashing, and user/profile APIs.
+
+**Setup:**
+
+```bash
+cd "Mission-2/Module-8"
+npm install
+```
+
+**Environment Configuration:**
+
+Create a `.env` file with your PostgreSQL and JWT settings:
+
+```env
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
+JWT_SECRET=your_jwt_secret_here
+```
+
+**Running the server:**
+
+```bash
+# Using tsx for TypeScript execution
+npm run dev
+
+# Or manually
+tsx src/server.ts
+```
+
+**API Endpoints:**
+
+```bash
+# Get server status
+curl http://localhost:5000/
+
+# Create user
+curl -X POST http://localhost:5000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","password":"secret123","age":25}'
+
+# Get all users
+curl http://localhost:5000/api/users
+
+# Get user by ID
+curl http://localhost:5000/api/users/1
+
+# Update user
+curl -X PUT http://localhost:5000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Jane Doe","age":26}'
+
+# Delete user
+curl -X DELETE http://localhost:5000/api/users/1
+
+# Login user
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"john@example.com","password":"secret123"}'
+
+# Create profile
+curl -X POST http://localhost:5000/api/profile \
+  -H "Content-Type: application/json" \
+  -d '{"user_id":1,"bio":"Developer","address":"Dhaka","phone":"0123456789","gender":"male"}'
+```
+
 ## Progress Tracker
 
 | Module                   | Location           | Status | Description                                                       |
 | :----------------------- | :----------------- | :----: | :---------------------------------------------------------------- |
 | **JavaScript**           | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning               |
-| **JavaScript**           | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, some placeholders      |
+| **JavaScript**           | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js` |
 | **TypeScript**           | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators   |
 | **TypeScript**           | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types   |
 | **TypeScript OOP**       | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards |
@@ -402,6 +494,7 @@ curl -X DELETE http://localhost:5000/api/users/1
 | **Web Fundamentals**     | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns             |
 | **Backend Project**      | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence   |
 | **Database Integration** | Mission-2/Module-7 |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations |
+| **Authentication**       | Mission-2/Module-8 |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation   |
 
 ## 🎓 Learning Recommendations
 
