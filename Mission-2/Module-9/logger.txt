@@ -1,0 +1,50 @@
+Method -> GET Time -> 1779027915422 url ->"/"
+Method -> GET Time -> 1779027980005 url ->"/"
+
+Method -> GET Time -> 1779027996851 url ->"/api/users"
+
+Method -> GET Time -> 1779028010282 url ->"/api/profile"
+
+Method -> GET Time -> 1779028031948 url ->"/"
+
+Method -> GET Time -> 1779029496581 url ->"/api/user/1"
+
+Method -> GET Time -> 1779029502723 url ->"/api/users/1"
+
+Method -> GET Time -> 1779029669521 url ->"/api/users"
+
+Method -> GET Time -> 1779029674906 url ->"/api/users"
+
+Method -> GET Time -> 1779029746390 url ->"/api/users"
+
+Method -> GET Time -> 1779029788185 url ->"/api/users"
+
+Method -> GET Time -> 1779029899203 url ->"/api/users"
+
+Method -> GET Time -> 1779029907984 url ->"/api/users"
+
+Method -> GET Time -> 1779030133026 url ->"/api/users"
+
+Method -> GET Time -> 1779030162386 url ->"/api/users"
+
+Method -> GET Time -> 1779030186263 url ->"/api/users"
+
+Method -> GET Time -> 1779030186345 url ->"/api/users"
+
+Method -> GET Time -> 1779030201984 url ->"/api/users"
+
+Method -> POST Time -> 1779030295484 url ->"/api/auth/login"
+
+Method -> POST Time -> 1779030396376 url ->"/users"
+
+Method -> GET Time -> 1779030442030 url ->"/api/users"
+
+Method -> GET Time -> 1779030469489 url ->"/api/users"
+
+Method -> GET Time -> 1779030713722 url ->"/api/users"
+
+Method -> GET Time -> 1779030963028 url ->"/api/users"
+
+Method -> GET Time -> 1779030997902 url ->"/api/users"
+
+Method -> GET Time -> 1779031031431 url ->"/api/users"
