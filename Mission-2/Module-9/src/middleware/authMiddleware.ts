@@ -1,4 +1,8 @@
+import dotnet from "dotenv";
 import type { NextFunction, Request, Response } from "express";
+import jwt, { type JwtPayload } from "jsonwebtoken";
+
+dotnet.config();
 
 //* Custom middleware
 const auth = () => {
@@ -14,6 +18,14 @@ const auth = () => {
         message: "Unauthorized",
       });
     }
+    console.log(token);
+
+    const decoded = jwt.verify(
+      token as string,
+      process.env.JWT_SECRET as string,
+    ) as JwtPayload;
+
+    console.log(decoded);
 
     next();
   };

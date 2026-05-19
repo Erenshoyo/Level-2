@@ -40,7 +40,7 @@ const loginUserIntoDB = async (payload: {
   if (!secret) throw new Error("JWT secret is not configured");
 
   const accessToken = jwt.sign(jwtPayload, secret, {
-    expiresIn: "1d",
+    expiresIn: "7d",
   });
 
   return { accessToken };
