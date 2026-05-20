@@ -2,11 +2,12 @@ import dotnet from "dotenv";
 import type { NextFunction, Request, Response } from "express";
 import jwt, { decode, type JwtPayload } from "jsonwebtoken";
 import { pool } from "../db";
+import type { ROLES } from "../types";
 
 dotnet.config();
 
 //* Custom middleware
-const auth = () => {
+const auth = (...roles: ROLES[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     // Using try catch so that the whole server doesn't crash incase of an unidentified error.
     try {
@@ -47,13 +48,19 @@ const auth = () => {
         });
       }
 
-      if (user.is_active === false) {
+      if (user?.is_active === false) {
         res.status(403).json({
           success: false,
           message: "Forbidden.",
         });
       }
 
+      if (roles.length && !roles.includes(user.role)) {
+        res.status(403).json({
+          success: false,
+          message: "Forbidden.",
+        });
+      }
       req.user = decoded; // req : { user: {} }
       next();
     } catch (error) {

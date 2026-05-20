@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const secret = process.env.JWT_SECRET;
+const refresh_secret = process.env.JWT_REFRESH_SECRET;
 
 const loginUserIntoDB = async (payload: {
   email: string;
@@ -34,16 +35,20 @@ const loginUserIntoDB = async (payload: {
   const jwtPayload = {
     id: user.id,
     name: user.name,
+    role: user.role,
     is_active: user.is_active,
     email: user.email,
   };
   if (!secret) throw new Error("JWT secret is not configured");
 
-  const accessToken = jwt.sign(jwtPayload, secret, {
+  const accessToken = jwt.sign(jwtPayload, secret as string, {
+    expiresIn: "1d",
+  });
+  const refreshToken = jwt.sign(jwtPayload, refresh_secret as string, {
     expiresIn: "7d",
   });
 
-  return { accessToken };
+  return { accessToken, refreshToken };
 };
 
 export const authService = {
