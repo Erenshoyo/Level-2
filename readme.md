@@ -113,6 +113,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Use environment variables for `DATABASE_URL` and `JWT_SECRET`
 - Organize Express routes into modular controllers and service layers
 
+**Phase 7: Advanced Middleware & Authorization (Mission-2/Module-9)**
+
+- Add request logging middleware to persist incoming request metadata
+- Use CORS and cookie parsing to support browser clients and refresh tokens
+- Implement global error handling middleware for centralized error responses
+- Add role-based access control for admin/agent/user protected routes
+- Support cookie-based JWT refresh tokens for session renewal
+- Enhance security and traceability across user and auth endpoints
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -143,6 +152,11 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Type-safe server implementation using TypeScript interfaces and types
 - File-based data persistence with JSON database operations
 - Environment configuration management with dotenv for sensitive data
+- Middleware logging and request tracing with a custom logger
+- Global error handling middleware for consistent API errors
+- CORS and cookie parsing for browser-safe refresh token support
+- Role-based authorization guards for admin and agent access control
+- Cookie-based refresh token flow with access token renewal
 - Authentication and authorization with JWT and password hashing using bcryptjs
 - Modular Express router design for `/api/users`, `/api/auth`, and `/api/profile`
 - PostgreSQL relational tables and foreign key relationships for users and profiles
@@ -256,6 +270,20 @@ This repository serves as a practical learning sandbox for mastering backend fun
       - `modules/auth/` — login route, controller, and JWT authentication service
       - `modules/user/` — user CRUD routes, controller, and service with bcrypt password hashing
       - `modules/profile/` — profile creation route and relational profile service
+  - `Module-9/`
+    - `package.json` — Node package manifest with Express, bcryptjs, cookie-parser, cors, jsonwebtoken, pg, tsx, and TypeScript
+    - `tsconfig.json` — TypeScript compiler configuration for Module 9
+    - `.env` — environment variables for PostgreSQL connection and JWT secrets
+    - `src/`
+      - `app.ts` — Express app setup with middleware, CORS, cookies, and route registration
+      - `server.ts` — app entry point with database initialization
+      - `db/index.ts` — PostgreSQL pool setup and schema initialization for `users` and `profiles`
+      - `middleware/logger.ts` — request logging middleware writing requests to `logger.txt`
+      - `middleware/globalErrorHandler.ts` — centralized error handler
+      - `middleware/authMiddleware.ts` — role-based authentication and authorization guard
+      - `modules/auth/` — login and refresh token routes with JWT cookie support
+      - `modules/user/` — protected user CRUD routes with admin/agent role access
+      - `modules/profile/` — profile creation route with relational user validation
 
 - `PreVideos/`
   - `Module-2/`
@@ -481,20 +509,93 @@ curl -X POST http://localhost:5000/api/profile \
   -d '{"user_id":1,"bio":"Developer","address":"Dhaka","phone":"0123456789","gender":"male"}'
 ```
 
+### Advanced Middleware Server Project (Mission-2/Module-9)
+
+A modular Express + PostgreSQL server with role-based authorization, request logging, CORS, cookies, and JWT refresh tokens.
+
+**Setup:**
+
+```bash
+cd "Mission-2/Module-9"
+npm install
+```
+
+**Environment Configuration:**
+
+Create a `.env` file with your PostgreSQL and JWT settings:
+
+```env
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
+JWT_SECRET=your_jwt_secret_here
+JWT_REFRESH_SECRET=your_jwt_refresh_secret_here
+```
+
+**Running the server:**
+
+```bash
+# Using tsx for TypeScript execution
+npm run dev
+
+# Or manually
+tsx src/server.ts
+```
+
+**API Endpoints:**
+
+```bash
+# Get server status
+curl http://localhost:5000/
+
+# Create user
+curl -X POST http://localhost:5000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","password":"secret123","age":25,"role":"admin"}'
+
+# Get all users (admin/agent only)
+curl http://localhost:5000/api/users \
+  -H "Authorization: Bearer <ACCESS_TOKEN>"
+
+# Get user by ID
+curl http://localhost:5000/api/users/1
+
+# Update user
+curl -X PUT http://localhost:5000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Jane Doe","age":26}'
+
+# Delete user
+curl -X DELETE http://localhost:5000/api/users/1
+
+# Login user
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"john@example.com","password":"secret123"}'
+
+# Refresh access token
+curl -X POST http://localhost:5000/api/auth/refresh_token \
+  -H "Content-Type: application/json"
+
+# Create profile
+curl -X POST http://localhost:5000/api/profile \
+  -H "Content-Type: application/json" \
+  -d '{"user_id":1,"bio":"Developer","address":"Dhaka","phone":"0123456789","gender":"male"}'
+```
+
 ## Progress Tracker
 
-| Module                   | Location           | Status | Description                                                       |
-| :----------------------- | :----------------- | :----: | :---------------------------------------------------------------- |
-| **JavaScript**           | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning               |
+| Module                   | Location           | Status | Description                                                                |
+| :----------------------- | :----------------- | :----: | :------------------------------------------------------------------------- |
+| **JavaScript**           | PreVideos/Module-2 |   ✅   | Array utilities, reduce, lookups, grouping, binning                        |
 | **JavaScript**           | PreVideos/Module-3 |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js` |
-| **TypeScript**           | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators   |
-| **TypeScript**           | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types   |
-| **TypeScript OOP**       | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards |
-| **TypeScript Applied**   | Mission-1/Module-4 |   ✅   | 7 coding challenges, type narrowing blog, utility types blog      |
-| **Web Fundamentals**     | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns             |
-| **Backend Project**      | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence   |
-| **Database Integration** | Mission-2/Module-7 |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations |
-| **Authentication**       | Mission-2/Module-8 |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation   |
+| **TypeScript**           | Mission-1/Module-1 |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators            |
+| **TypeScript**           | Mission-1/Module-2 |   ✅   | Generics, interfaces, utility types, mapped & conditional types            |
+| **TypeScript OOP**       | Mission-1/Module-3 |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards          |
+| **TypeScript Applied**   | Mission-1/Module-4 |   ✅   | 7 coding challenges, type narrowing blog, utility types blog               |
+| **Web Fundamentals**     | Mission-2/Module-5 |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns                      |
+| **Backend Project**      | Mission-2/Module-6 |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence            |
+| **Database Integration** | Mission-2/Module-7 |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations          |
+| **Authentication**       | Mission-2/Module-8 |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation            |
+| **Advanced Middleware**  | Mission-2/Module-9 |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens            |
 
 ## 🎓 Learning Recommendations
 
