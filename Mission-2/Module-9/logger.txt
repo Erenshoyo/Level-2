@@ -154,3 +154,21 @@ Method -> GET Time -> 1779295854986 url ->"/api/users"
 Method -> GET Time -> 1779295855095 url ->"/api/users"
 
 Method -> POST Time -> 1779296625329 url ->"/api/auth/login"
+
+Method -> GET Time -> 1779300651869 url ->"/api/auth/refresh-token"
+
+Method -> GET Time -> 1779300741291 url ->"/api/auth/refresh-token"
+
+Method -> POST Time -> 1779300753893 url ->"/api/auth/refresh-token"
+
+Method -> POST Time -> 1779300772511 url ->"/api/auth/refresh-token"
+
+Method -> POST Time -> 1779300774329 url ->"/api/auth/refresh-token"
+
+Method -> POST Time -> 1779300798315 url ->"/api/auth/login"
+
+Method -> POST Time -> 1779300820261 url ->"/api/auth/refresh-token"
+
+Method -> GET Time -> 1779301223486 url ->"/"
+
+Method -> GET Time -> 1779301223575 url ->"/favicon.ico"

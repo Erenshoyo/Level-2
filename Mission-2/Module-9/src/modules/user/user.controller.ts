@@ -1,25 +1,31 @@
 import type { Request, Response } from "express";
 import { pool } from "../../db";
 import { userService } from "./user.service";
+import sendResponse from "../../utility/sendResponse";
 
 const createUser = async (req: Request, res: Response) => {
   // console.log(req.body);
 
   //? Request as response.
   // const body = req.body //! Here we can use selective data, even passwords get visible
-  const { name, email, password, age } = req.body; //! So, we destructure it and use only the necessary elements.
+  //const { name, email, password, age } = req.body; //! So, we destructure it and use only the necessary elements.
 
   try {
     const result = await userService.createUserIntoDB(req.body);
     // console.log(result);
 
     //* 201 -> Status:- Created
-    res.status(201).json({
+    res.status(201).json();
+    sendResponse(res, {
+      statusCode: 201,
+      success: true,
       message: "User created successfully",
       data: result.rows[0],
     });
   } catch (error: any) {
-    res.status(201).json({
+    sendResponse(res, {
+      statusCode: 500,
+      success: false,
       message: error.message,
       error: error,
     });
