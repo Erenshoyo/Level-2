@@ -122,6 +122,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Support cookie-based JWT refresh tokens for session renewal
 - Enhance security and traceability across user and auth endpoints
 
+**Phase 8: Issue Tracker Assignment (Mission-2/Module-10: Assignment Module)**
+
+- Build a production-style issue tracking backend with Express and PostgreSQL
+- Implement JWT authentication with access and refresh token flows
+- Use secure HTTP-only cookies for refresh token storage
+- Enforce role-based access control for contributors and maintainers
+- Create issue CRUD endpoints with filtering, sorting, and status workflows
+- Initialize database schema automatically on startup and manage relational data
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -285,6 +294,18 @@ This repository serves as a practical learning sandbox for mastering backend fun
       - `modules/user/` — protected user CRUD routes with admin/agent role access
       - `modules/profile/` — profile creation route with relational user validation
 
+  - `Module-10: Assignment Module/`
+    - `README.md` — DevPulse API overview, feature summary, and setup instructions
+    - `package.json` — project manifest with Express, PostgreSQL, JWT, bcrypt, cookies, CORS, and tsup
+    - `tsconfig.json` — TypeScript compiler configuration
+    - `.env` — environment variables for PostgreSQL connection and JWT secrets
+    - `src/`
+      - `server.ts` — API entry point with app bootstrap and database initialization
+      - `app.ts` — Express application setup with middleware and route registration
+      - `db/` — PostgreSQL pool setup and schema initialization for users and issues
+      - `modules/auth/` — signup, login, refresh, and auth token management routes
+      - `modules/issues/` — issue CRUD and filtering routes with maintainer/contributor access control
+
 - `PreVideos/`
   - `Module-2/`
     - `MO2VO3.js` — array utilities: `sort`, `flat`, `some`, and `Array.from` with examples like pagination
@@ -387,6 +408,40 @@ curl -X PATCH http://localhost:3000/products/1 \
 # Delete product
 curl -X DELETE http://localhost:3000/products/1
 ```
+
+### Issue Tracker Assignment Backend (Mission-2/Module-10: Assignment Module)
+
+A TypeScript-based issue tracker backend built with Express and PostgreSQL, featuring JWT auth, refresh tokens, and role-based access.
+
+**Setup:**
+
+```bash
+cd "Mission-2/Module-10: Assignment Module"
+npm install
+```
+
+**Running the server:**
+
+```bash
+npm run dev
+```
+
+**Build for production:**
+
+```bash
+npm run build
+npm start
+```
+
+**Typical API workflow:**
+
+- `POST /api/auth/signup` to register a user
+- `POST /api/auth/login` to obtain an access token
+- `POST /api/auth/refresh` to refresh tokens via cookie
+- `POST /api/issues` to create an issue
+- `GET /api/issues` to list issues with optional filters
+- `PATCH /api/issues/:id` to update issue details
+- `DELETE /api/issues/:id` for maintainer-only issue removal
 
 ### Database-Backed Server Project (Mission-2/Module-7)
 
