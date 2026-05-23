@@ -1,6 +1,6 @@
 import dotnet from "dotenv";
 import type { NextFunction, Request, Response } from "express";
-import jwt, { decode, type JwtPayload } from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import { pool } from "../db";
 import type { ROLES } from "../types";
 
