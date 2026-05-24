@@ -131,6 +131,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Create issue CRUD endpoints with filtering, sorting, and status workflows
 - Initialize database schema automatically on startup and manage relational data
 
+**Phase 9: DBMS Fundamentals (Mission-3/Module-11)**
+
+- Learn core database concepts: data, DBMS, and relational models
+- Compare databases to file systems and understand why DBMS is necessary
+- Study database types: relational, document, and key-value models
+- Explore keys: super, candidate, primary, alternate, composite, simple, and foreign
+- Understand table relationships and ER diagram design
+- Review schema concepts, constraints, and how relational tables connect via foreign keys
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -306,6 +315,11 @@ This repository serves as a practical learning sandbox for mastering backend fun
       - `modules/auth/` — signup, login, refresh, and auth token management routes
       - `modules/issues/` — issue CRUD and filtering routes with maintainer/contributor access control
 
+- `Mission-3/`
+  - `Module-11/`
+    - `DBMS_Part1.md` — relational database notes, DBMS fundamentals, keys, and table relationships
+    - `ER Diagram DEMO.png` — example ER diagram for relationship modeling
+
 - `PreVideos/`
   - `Module-2/`
     - `MO2VO3.js` — array utilities: `sort`, `flat`, `some`, and `Array.from` with examples like pagination
@@ -442,6 +456,21 @@ npm start
 - `GET /api/issues` to list issues with optional filters
 - `PATCH /api/issues/:id` to update issue details
 - `DELETE /api/issues/:id` for maintainer-only issue removal
+
+### DBMS Fundamentals Notes (Mission-3/Module-11)
+
+This module contains relational database theory and modeling notes, including key types, table relationships, and ER diagrams.
+
+**Open the notes:**
+
+```bash
+cd "Mission-3/Module-11"
+code DBMS_Part1.md
+```
+
+**Inspect the ER diagram:**
+
+Open `ER Diagram DEMO.png` in your editor or image viewer.
 
 ### Database-Backed Server Project (Mission-2/Module-7)
 
@@ -651,6 +680,7 @@ curl -X POST http://localhost:5000/api/profile \
 | **Database Integration** | Mission-2/Module-7 |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations          |
 | **Authentication**       | Mission-2/Module-8 |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation            |
 | **Advanced Middleware**  | Mission-2/Module-9 |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens            |
+| **DBMS Fundamentals**    | Mission-3/Module-11 |   ✅   | Relational DBMS concepts, keys, ER diagrams, and table relationships       |
 
 ## 🎓 Learning Recommendations
 
@@ -666,6 +696,7 @@ curl -X POST http://localhost:5000/api/profile \
 2. Study `Mission-1/Module-2` for advanced type system features
 3. Explore `Mission-1/Module-4` assignment module for real-world problems
 4. Review `Mission-2/Module-5` for web architecture understanding
+5. Study `Mission-3/Module-11` for database design and relational modeling theory
 
 **For Building Projects:**
 
@@ -673,6 +704,7 @@ curl -X POST http://localhost:5000/api/profile \
 2. Study `Mission-2/Module-5` for HTTP protocol understanding
 3. Work with `Mission-2/Module-6` to build full-featured backend servers
 4. Integrate `Mission-2/Module-7` for database-backed applications with PostgreSQL
+5. Review `Mission-3/Module-11` for relational modeling and DBMS terminology
 
 ## 📝 Key Files Summary
 
@@ -691,3 +723,4 @@ curl -X POST http://localhost:5000/api/profile \
 | Data Models          | [product.type.ts](Mission-2/Module-6/src/types/product.type.ts)           | M2-M6  |
 | PostgreSQL Server    | [server.ts](Mission-2/Module-7/src/server.ts)                             | M2-M7  |
 | SQL Fundamentals     | [sql_basic.md](Mission-2/Module-7/src/sql_basic.md)                       | M2-M7  |
+| DBMS Fundamentals    | [DBMS_Part1.md](Mission-3/Module-11/DBMS_Part1.md)                        | M3-M11 |
