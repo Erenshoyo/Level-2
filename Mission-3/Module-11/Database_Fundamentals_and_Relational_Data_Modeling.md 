@@ -1,0 +1,326 @@
+# Database Management System (DBMS) — Part 1 Notes
+
+---
+
+## 1. What is a Database?
+
+A **database** is a structured collection of related data, organized for efficient storage, retrieval, and management.
+
+**Data is everywhere** — apps like YouTube, Instagram, and Facebook all store their data in databases.
+
+---
+
+## 2. What is Data?
+
+**Data** is facts that can be recorded in the form of numbers, text, images, audio, video, etc.
+
+### Example — Data vs Information:
+| Raw Data | Process | Information |
+|---|---|---|
+| 85, 90, 88, 92, 87 (temperatures) | Calculate average: (85+90+88+92+87)/5 | **88.4** — the average temperature (a meaningful insight) |
+
+> **Key distinction:** Data is raw facts; **Information** is processed and organized data that provides meaningful context, insight, or knowledge.
+
+---
+
+## 3. What is a DBMS?
+
+**DBMS = Database Management System**
+
+A DBMS is software that acts as an intermediary between the user/application and the physical database storage. Data flows:
+
+```
+User/Application → DBMS (processes & manages) → Physical Storage (disk)
+```
+
+### Why not just use a File System?
+
+**Storing Data Using a File System** has serious problems:
+- **Multiple formats** (.txt, .mp4, etc.) — no standard
+- **Data redundancy** — same data stored in multiple places
+- **Data inconsistency** — different copies of data get out of sync (e.g., two files show Arish's address differently)
+- **No concurrency protocol** — multiple users editing simultaneously causes conflicts
+- **Security issues** — no fine-grained access control
+
+A DBMS solves all of the above.
+
+---
+
+## 4. Types of Databases
+
+| Type | Examples |
+|---|---|
+| **Relational** | MySQL, PostgreSQL, SQLite, Microsoft SQL Server |
+| **Document** | MongoDB, Amazon DynamoDB |
+| **Key-Value** | Redis |
+
+---
+
+## 5. Database Models
+
+These are the structural approaches to organizing data:
+
+1. **Hierarchical** — tree-like parent-child structure (e.g., Instructor → Mezba → Mongoose, Express; Mir → Javascript)
+2. **Network** — like hierarchical but nodes can have multiple parents; drawbacks: Complexity, Schema Definition issues, Lack of Standardization
+3. **Relational** — data stored in linked tables (most widely used today)
+4. **Document** — data stored as documents (e.g., JSON)
+5. **Key-Value** — simple key→value pairs
+
+---
+
+## 6. Relational Model — Table / Relation
+
+In a relational database, data is organized in **tables** (also called **relations**). Every table has:
+
+| Term | Meaning |
+|---|---|
+| **Table / Relation** | The whole structure (e.g., "User" table) |
+| **Column / Attribute** | A field/property of the entity (e.g., `name`, `email`) |
+| **Constraint / Domain** | The allowed type of value in a column (e.g., email column accepts email format only; dob accepts dates only) |
+| **Row / Tuple / Record** | A single entry/instance in the table |
+| **Cardinality** | The total number of rows in a table |
+| **Degree** | The total number of columns (collection of columns) |
+
+### Example — User Table:
+
+| id | name | email | gender | dob |
+|---|---|---|---|---|
+| 1 | Arisha | arisha@mail.com | female | 1985-03-15 |
+| 2 | Nour | nour@mail.com | male | 1990-07-28 |
+| 3 | Omar | omar.h@email.net | male | 2001-02-03 |
+| 4 | Hassan | hassan@email.org | male | 1998-07-22 |
+
+- **Cardinality** = 4 (4 rows)
+- **Degree** = 5 (5 columns)
+
+### Relational Model — Multiple Related Tables:
+Tables are linked together. For example, a **User** table and an **Order** table. The Order table has a `u_id` column that references the User table's primary key — this creates a relationship between them.
+
+---
+
+## 7. Keys
+
+> **Definition:** A key in a relational database is a field or a combination of fields that uniquely identifies a record in a table.
+
+### Types of Keys:
+
+---
+
+### 7.1 Super Key
+- An **attribute or set of attributes** by which we can identify each row uniquely.
+- Can be a single attribute or a set of attributes.
+- **Can have null values** in the set.
+
+**Example (User table with u_id, name, email, gender, age):**
+
+Super Keys include: `{u_id}`, `{email}`, `{u_id, name}`, `{u_id, email}`, `{u_id, name, email, gender, age}`, `{name, email}`, `{name, gender}` ... and many more.
+
+> Note: A super key like `{u_id, name}` still uniquely identifies rows — even though just `{u_id}` alone would be enough. If a name can be `null`, then `{u_id, name}` = `{6, null}` is still valid because `u_id` alone makes it unique.
+
+---
+
+### 7.2 Candidate Key
+- A **super key whose proper subset is NOT a super key**.
+- Also called **Minimal Super Key**.
+- It is a **Potential Primary Key** — from candidate keys, one is chosen as the primary key.
+
+**Understanding "Proper Subset":**
+- Set A = {1, 2, 3}
+- All subsets: {}, {1}, {2}, {3}, {1,2}, {2,3}, {1,3}, {1,2,3}
+- Proper subsets (excluding the set itself): {}, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}
+
+**Finding Candidate Keys in the User table:**
+Super keys and their proper subsets analysis:
+- `{u_id}` → proper subsets are {} and {u_id}; {} is not a super key → **{u_id} is a Candidate Key** ✅
+- `{email}` → similarly → **{email} is a Candidate Key** ✅
+- `{name, gender}` → neither {name} alone nor {gender} alone uniquely identifies rows (duplicate names/genders exist) → **{name, gender} is a Candidate Key** ✅
+- `{u_id, name}` → proper subset {u_id} IS a super key → NOT a candidate key ❌
+
+**Candidate Keys = `{u_id}`, `{email}`, `{name, gender}`**
+
+---
+
+### 7.3 Primary Key
+- From the candidate keys, **one key is chosen** as the primary key for the table.
+- It is the **main identifier** for records in the table.
+- **Must be: Unique, NOT NULL, and Stable** (should not change frequently).
+
+**Example:**
+- Candidate Keys: `{u_id}`, `{email}`, `{name, gender}`
+- **Primary Key chosen: `{u_id}`** (best choice — numeric, stable, non-null)
+
+---
+
+### 7.4 Alternate Key
+- The **candidate keys that were NOT chosen** as the primary key.
+
+**Example:**
+- Candidate Keys: `{u_id}`, `{email}`, `{name, gender}`
+- Primary Key: `{u_id}`
+- **Alternate Keys: `{email}`, `{name, gender}`**
+
+---
+
+### 7.5 Composite Key
+- A candidate key that consists of **two or more attributes** together to uniquely identify a record.
+- Single-attribute candidate keys are **NOT** composite keys.
+
+**Example:**
+- **Composite Key: `{name, gender}`** (needs both attributes together to be unique)
+- Simple Keys (single attribute): `{u_id}`, `{email}`
+
+---
+
+### 7.6 Simple Key
+- A candidate key that consists of a **single attribute**.
+
+**Example:**
+- **Simple Keys: `{u_id}`, `{email}`**
+
+---
+
+### 7.7 Foreign Key
+- A foreign key is an **attribute in one table that refers to the primary key of another table**, creating a relationship between the two tables.
+
+**Example:**
+
+**Customer Table (Primary Key = CustomerID):**
+| CustomerID | Name | Email | Phone |
+|---|---|---|---|
+| 1 | Alice | alice@email.com | 123-456-7890 |
+| 2 | Bob | bob@email.com | 987-654-3210 |
+| 3 | Charlie | charlie@email.com | 111-222-3333 |
+
+**Order Table (Foreign Key = CustomerID → references Customer.CustomerID):**
+| OrderID | CustomerID | OrderDate | TotalAmount |
+|---|---|---|---|
+| 101 | 1 | 2023-01-15 | $150 |
+| 102 | 2 | 2023-01-16 | $200 |
+| 103 | 1 | 2023-01-18 | $80 |
+
+> The `CustomerID` in the Order table is a **Foreign Key** pointing to the `CustomerID` (Primary Key) in the Customer table. This creates a link/relationship between the two tables.
+
+---
+
+### Summary of All Keys (with the User Table example):
+
+| Key Type | Value |
+|---|---|
+| Super Keys | {u_id}, {email}, {u_id, name}, {u_id, email}, {name, email}, {name, gender}, ... |
+| Candidate Keys | {u_id}, {email}, {name, gender} |
+| Primary Key | {u_id} |
+| Alternate Keys | {email}, {name, gender} |
+| Composite Key | {name, gender} |
+| Simple Keys | {u_id}, {email} |
+| Foreign Key | A field referencing another table's primary key |
+
+---
+
+## 8. Database Design
+
+### 8.1 SDLC (System Development Life Cycle)
+
+Good database design follows the SDLC phases:
+
+1. **Planning**
+2. **Analysis**
+3. **System Design** ← *Most critical for DB design*
+4. **Building**
+5. **Testing**
+6. **Deployment**
+
+### 8.2 Purpose of Database Design
+Structured organization for **efficient data management and retrieval**.
+
+### 8.3 Steps in System Design (Database Design)
+
+The key steps for designing a database:
+
+1. **Determining Entities** — identify the "things" or objects that need to be stored
+2. **Determining Attributes for Each Entity** — define the properties/columns for each entity
+3. **Relationships Among Entities** — define how entities relate to each other
+4. **Resolving Many-to-Many Relationships** — break them down using a junction table
+
+---
+
+### 8.4 Practical Example — "EduHub" Platform
+
+**Problem:** EduHub is a global website offering technology courses across different subjects, allowing students to enroll and learn.
+
+**Step 1 — Determining Entities:**
+- Students enrolling in courses → **students**
+- Courses available for enrollment → **courses**
+- Instructors teaching courses → **instructors**
+
+**Step 2 — Determining Attributes:**
+
+| Entity | Attributes |
+|---|---|
+| **students** | student_id, name, email |
+| **courses** | course_id, c_name, instructor_id |
+| **instructors** | instructor_id, i_name, gender |
+
+**Step 3 — Relationships Among Entities:**
+- An instructor teaches one or many courses (1:N)
+- A student can enroll in many courses; a course can have many students (N:N — Many to Many)
+
+**Step 4 — Resolving Many-to-Many:**
+- Create a **junction table** (e.g., `enrollments`) with `student_id` and `course_id` as a composite primary key.
+
+---
+
+## 9. Relationship Cardinality
+
+**Definition:** Relationship cardinality is the rule that defines **how many instances of one entity can be associated with instances of another entity** in a database.
+
+### Types of Cardinality:
+
+| Type | Notation | Meaning |
+|---|---|---|
+| One-to-One | 1:1 | One record in A relates to exactly one record in B |
+| One-to-Many | 1:N | One record in A relates to many records in B |
+| Many-to-One | N:1 | Many records in A relate to one record in B |
+| Many-to-Many | N:N | Many records in A relate to many records in B |
+
+### Cardinality Signs (ERD Notation):
+
+| Symbol | Meaning |
+|---|---|
+| `——` (single line) | One |
+| `——<` (crow's foot) | Many |
+| `——O——` (circle) | Zero or One |
+| `——\|<` | One or Many |
+| `>——<` | Many to Many |
+| `——O<` | Zero or Many |
+
+---
+
+## 10. Entity-Relationship (ER) Diagram
+
+**Definition:** An ER diagram is a diagram that shows entities, their attributes, and the relationships between them.
+
+It is the visual blueprint used during database system design to plan the structure before building the actual database.
+
+---
+
+## Quick Revision Cheat Sheet
+
+| Concept | One-liner |
+|---|---|
+| Database | Structured collection of related data |
+| Data | Raw recordable facts |
+| Information | Processed data with meaningful context |
+| DBMS | Software managing DB creation, access, and control |
+| File System problems | Redundancy, inconsistency, no concurrency, security issues |
+| Relational DB | Stores data in linked tables |
+| Super Key | Any attribute set that uniquely identifies rows (can have null) |
+| Candidate Key | Minimal super key (no proper subset is also a super key) |
+| Primary Key | Chosen candidate key — unique, not null, stable |
+| Alternate Key | Candidate keys not chosen as primary |
+| Composite Key | Candidate key made of 2+ attributes |
+| Simple Key | Candidate key made of 1 attribute |
+| Foreign Key | Attribute referencing another table's primary key |
+| Cardinality (table) | Number of rows in a table |
+| Degree | Number of columns in a table |
+| Cardinality (relationship) | Rule on how many instances relate between entities |
+| ER Diagram | Visual diagram of entities, attributes, and relationships |
