@@ -1,6 +1,5 @@
 # Database Management System (DBMS) — Part 1 Notes
-> **Instructor:** Mizanur Rahman | Mentor, Next Level Web Development | Web Developer, Neptune
- 
+
 ---
  
 ## 1. What is a Database?
