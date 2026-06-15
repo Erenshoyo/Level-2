@@ -744,7 +744,8 @@ curl -X POST http://localhost:5000/api/profile \
 ## 📝 Key Files Summary
 
 | Concept                | File                                                                             | Module |
-| ---------------------- | -------------------------------------------------------------------------------- | ------ | --- | ------------------------------- | -------------------------------------------------- | ------ |
+| ---------------------- | -------------------------------------------------------------------------------- | ------ |  
+| ---------------------- | -------------------------------------------------------------------------------- | ------ |
 | Primitive Types        | [primitive.ts](Mission-1/Module-1/src/primitive.ts)                              | M1-M1  |
 | Union & Intersection   | [unionAndIntersection.ts](Mission-1/Module-1/src/unionAndIntersection.ts)        | M1-M1  |
 | Generics               | [generic.ts](Mission-1/Module-2/src/generic.ts)                                  | M1-M2  |
@@ -763,7 +764,8 @@ curl -X POST http://localhost:5000/api/profile \
 | Normalization & Part 2 | [DBMS_Part2.md](Mission-3/Module-12/DBMS_Part2.md)                               | M3-M12 |
 | Final ER Diagram       | [Final ER Diagram DEMO.png](Mission-3/Module-12/Final%20ER%20Diagram%20DEMO.png) | M3-M12 |
 | SQL & Data Handling    | [DBMS_Part3.md](Mission-3/Module-13/DBMS_Part3.md)                               | M3-M13 |
-| SQL Statements & Fns   | [DBMS_Part4.md](Mission-3/Module-14/DBMS_Part4.md)                               | M3-M14 |     | Practical Exercise (Enrollment) | [DBMS_Part5.md](Mission-3/Module-15/DBMS_Part5.md) | M3-M15 |
+| SQL Statements & Fns   | [DBMS_Part4.md](Mission-3/Module-14/DBMS_Part4.md)                               | M3-M14 |     
+| Practical Exercise (Enrollment) | [DBMS_Part5.md](Mission-3/Module-15/DBMS_Part5.md)                      | M3-M15 |
 | Bookstore Practice     | [DBMS_Part6.md](Mission-3/Module-16/DBMS_Part6.md)                               | M3-M16 |
 | Assignment (Football)  | [README.md](Mission-3/Module-17%20:%20Assignment%20Module/README.md)             | M3-M17 |
 | Assignment SQL         | [QUERY.sql](Mission-3/Module-17%20:%20Assignment%20Module/QUERY.sql)             | M3-M17 |
