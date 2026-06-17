@@ -142,6 +142,14 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Module-16: Additional practice tasks (bookstore) with insert scripts and analytical queries
 - Module-17: Assignment module — Football Ticket Booking System with `QUERY.sql` and sample data
 
+**Phase 10: Prisma & ORM Fundamentals (Mission-4/Module-18)**
+
+- Learn ORM fundamentals using Prisma with PostgreSQL
+- Explore schema-driven database modeling and auto-generated type-safe client code
+- Practice Prisma migrations, schema-first modeling, and generated client queries
+- Study how TypeScript and Prisma work together for safer backend development
+- Build a relational `User`/`Post` model with one-to-many relations and query it via `src/script.ts`
+
 ## Key Concepts
 
 - JavaScript array utilities: `sort`, `flat`, `some`, `Array.from`
@@ -335,6 +343,16 @@ This repository serves as a practical learning sandbox for mastering backend fun
   - `Module-17 : Assignment Module/`
     - `README.md` — Football Ticket Booking System assignment overview and sample queries
     - `QUERY.sql` — DDL, sample data inserts, and assignment SQL queries
+
+- `Mission-4/`
+  - `Module-18/`
+    - `.env` — environment variable example for Prisma/PostgreSQL
+    - `package.json` — Prisma, TypeScript, dotenv, pg, and tsx dependencies
+    - `prisma.config.ts` — Prisma project configuration for schema and migrations
+    - `About_Prisma.md` — Prisma fundamentals, ORM concepts, and workflow notes
+    - `src/script.ts` — Prisma client usage example with user and post queries
+    - `src/server.ts` — placeholder server entry point for future expansion
+    - `prisma/` — Prisma schema and migrations folder
 
 - `PreVideos/`
   - `Module-2/`
@@ -702,20 +720,21 @@ curl -X POST http://localhost:5000/api/profile \
 
 ## Progress Tracker
 
-| Module                   | Location                      | Status | Description                                                                |
-| :----------------------- | :---------------------------- | :----: | :------------------------------------------------------------------------- |
-| **JavaScript**           | PreVideos/Module-2            |   ✅   | Array utilities, reduce, lookups, grouping, binning                        |
-| **JavaScript**           | PreVideos/Module-3            |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js` |
-| **TypeScript**           | Mission-1/Module-1            |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators            |
-| **TypeScript**           | Mission-1/Module-2            |   ✅   | Generics, interfaces, utility types, mapped & conditional types            |
-| **TypeScript OOP**       | Mission-1/Module-3            |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards          |
-| **TypeScript Applied**   | Mission-1/Module-4            |   ✅   | 7 coding challenges, type narrowing blog, utility types blog               |
-| **Web Fundamentals**     | Mission-2/Module-5            |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns                      |
-| **Backend Project**      | Mission-2/Module-6            |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence            |
-| **Database Integration** | Mission-2/Module-7            |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations          |
-| **Authentication**       | Mission-2/Module-8            |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation            |
-| **Advanced Middleware**  | Mission-2/Module-9            |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens            |
-| **DBMS Fundamentals**    | Mission-3/Module-11–Module-15 |   ✅   | Relational DBMS concepts, keys, ER diagrams, and table relationships       |
+| Module                   | Location                      | Status | Description                                                                          |
+| :----------------------- | :---------------------------- | :----: | :----------------------------------------------------------------------------------- |
+| **JavaScript**           | PreVideos/Module-2            |   ✅   | Array utilities, reduce, lookups, grouping, binning                                  |
+| **JavaScript**           | PreVideos/Module-3            |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js`           |
+| **TypeScript**           | Mission-1/Module-1            |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators                      |
+| **TypeScript**           | Mission-1/Module-2            |   ✅   | Generics, interfaces, utility types, mapped & conditional types                      |
+| **TypeScript OOP**       | Mission-1/Module-3            |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards                    |
+| **TypeScript Applied**   | Mission-1/Module-4            |   ✅   | 7 coding challenges, type narrowing blog, utility types blog                         |
+| **Web Fundamentals**     | Mission-2/Module-5            |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns                                |
+| **Backend Project**      | Mission-2/Module-6            |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence                      |
+| **Database Integration** | Mission-2/Module-7            |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations                    |
+| **Authentication**       | Mission-2/Module-8            |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation                      |
+| **Advanced Middleware**  | Mission-2/Module-9            |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens                      |
+| **DBMS Fundamentals**    | Mission-3/Module-11–Module-17 |   ✅   | Relational DBMS concepts, keys, ER diagrams, practice exercises, and assignment work |
+| **ORM + Prisma**        | Mission-4/Module-18           |   ✅   | Prisma schema modeling, generated client queries, and PostgreSQL integration         |
 
 ## 🎓 Learning Recommendations
 
@@ -731,7 +750,7 @@ curl -X POST http://localhost:5000/api/profile \
 2. Study `Mission-1/Module-2` for advanced type system features
 3. Explore `Mission-1/Module-4` assignment module for real-world problems
 4. Review `Mission-2/Module-5` for web architecture understanding
-5. Study `Mission-3/Module-11` through `Module-15` for database design and relational modeling theory
+5. Review `Mission-3/Module-11` through `Module-17` for database design and relational modeling theory
 
 **For Building Projects:**
 
@@ -739,33 +758,36 @@ curl -X POST http://localhost:5000/api/profile \
 2. Study `Mission-2/Module-5` for HTTP protocol understanding
 3. Work with `Mission-2/Module-6` to build full-featured backend servers
 4. Integrate `Mission-2/Module-7` for database-backed applications with PostgreSQL
-5. Review `Mission-3/Module-11` through `Module-15` for relational modeling and DBMS terminology
-
+5. Review `Mission-3/Module-11` through `Module-17` for relational modeling and DBMS terminology
+6. Explore `Mission-4/Module-18` for Prisma ORM, schema-first modeling, and type-safe database access
 ## 📝 Key Files Summary
 
-| Concept                | File                                                                             | Module |
-| ---------------------- | -------------------------------------------------------------------------------- | ------ |  
-| ---------------------- | -------------------------------------------------------------------------------- | ------ |
-| Primitive Types        | [primitive.ts](Mission-1/Module-1/src/primitive.ts)                              | M1-M1  |
-| Union & Intersection   | [unionAndIntersection.ts](Mission-1/Module-1/src/unionAndIntersection.ts)        | M1-M1  |
-| Generics               | [generic.ts](Mission-1/Module-2/src/generic.ts)                                  | M1-M2  |
-| Interfaces             | [interface.ts](Mission-1/Module-2/src/interface.ts)                              | M1-M2  |
-| Mapped Types           | [mappedTypes.ts](Mission-1/Module-2/src/mappedTypes.ts)                          | M1-M2  |
-| Utility Types          | [utilityTypes.ts](Mission-1/Module-2/src/utilityTypes.ts)                        | M1-M2  |
-| Classes                | [class.ts](Mission-1/Module-3/src/class.ts)                                      | M1-M3  |
-| Inheritance            | [inheritance.ts](Mission-1/Module-3/src/inheritance.ts)                          | M1-M3  |
-| Assignment Solutions   | [solution.ts](Mission-1/Module-4/solution.ts)                                    | M1-M4  |
-| HTTP Server            | [server.ts](Mission-2/Module-6/src/server.ts)                                    | M2-M6  |
-| Data Models            | [product.type.ts](Mission-2/Module-6/src/types/product.type.ts)                  | M2-M6  |
-| PostgreSQL Server      | [server.ts](Mission-2/Module-7/src/server.ts)                                    | M2-M7  |
-| SQL Fundamentals       | [sql_basic.md](Mission-2/Module-7/src/sql_basic.md)                              | M2-M7  |
-| DBMS Fundamentals      | [DBMS_Part1.md](Mission-3/Module-11/DBMS_Part1.md)                               | M3-M11 |
-| ER Diagram             | [ER Diagram DEMO.png](Mission-3/Module-11/ER%20Diagram%20DEMO.png)               | M3-M11 |
-| Normalization & Part 2 | [DBMS_Part2.md](Mission-3/Module-12/DBMS_Part2.md)                               | M3-M12 |
-| Final ER Diagram       | [Final ER Diagram DEMO.png](Mission-3/Module-12/Final%20ER%20Diagram%20DEMO.png) | M3-M12 |
-| SQL & Data Handling    | [DBMS_Part3.md](Mission-3/Module-13/DBMS_Part3.md)                               | M3-M13 |
-| SQL Statements & Fns   | [DBMS_Part4.md](Mission-3/Module-14/DBMS_Part4.md)                               | M3-M14 |     
-| Practical Exercise (Enrollment) | [DBMS_Part5.md](Mission-3/Module-15/DBMS_Part5.md)                      | M3-M15 |
-| Bookstore Practice     | [DBMS_Part6.md](Mission-3/Module-16/DBMS_Part6.md)                               | M3-M16 |
-| Assignment (Football)  | [README.md](Mission-3/Module-17%20:%20Assignment%20Module/README.md)             | M3-M17 |
-| Assignment SQL         | [QUERY.sql](Mission-3/Module-17%20:%20Assignment%20Module/QUERY.sql)             | M3-M17 |
+| Concept                         | File                                                                             | Module |
+| ------------------------------- | -------------------------------------------------------------------------------- | ------ |
+| ----------------------          | -------------------------------------------------------------------------------- | ------ |
+| Primitive Types                 | [primitive.ts](Mission-1/Module-1/src/primitive.ts)                              | M1-M1  |
+| Union & Intersection            | [unionAndIntersection.ts](Mission-1/Module-1/src/unionAndIntersection.ts)        | M1-M1  |
+| Generics                        | [generic.ts](Mission-1/Module-2/src/generic.ts)                                  | M1-M2  |
+| Interfaces                      | [interface.ts](Mission-1/Module-2/src/interface.ts)                              | M1-M2  |
+| Mapped Types                    | [mappedTypes.ts](Mission-1/Module-2/src/mappedTypes.ts)                          | M1-M2  |
+| Utility Types                   | [utilityTypes.ts](Mission-1/Module-2/src/utilityTypes.ts)                        | M1-M2  |
+| Classes                         | [class.ts](Mission-1/Module-3/src/class.ts)                                      | M1-M3  |
+| Inheritance                     | [inheritance.ts](Mission-1/Module-3/src/inheritance.ts)                          | M1-M3  |
+| Assignment Solutions            | [solution.ts](Mission-1/Module-4/solution.ts)                                    | M1-M4  |
+| HTTP Server                     | [server.ts](Mission-2/Module-6/src/server.ts)                                    | M2-M6  |
+| Data Models                     | [product.type.ts](Mission-2/Module-6/src/types/product.type.ts)                  | M2-M6  |
+| PostgreSQL Server               | [server.ts](Mission-2/Module-7/src/server.ts)                                    | M2-M7  |
+| SQL Fundamentals                | [sql_basic.md](Mission-2/Module-7/src/sql_basic.md)                              | M2-M7  |
+| DBMS Fundamentals               | [DBMS_Part1.md](Mission-3/Module-11/DBMS_Part1.md)                               | M3-M11 |
+| ER Diagram                      | [ER Diagram DEMO.png](Mission-3/Module-11/ER%20Diagram%20DEMO.png)               | M3-M11 |
+| Normalization & Part 2          | [DBMS_Part2.md](Mission-3/Module-12/DBMS_Part2.md)                               | M3-M12 |
+| Final ER Diagram                | [Final ER Diagram DEMO.png](Mission-3/Module-12/Final%20ER%20Diagram%20DEMO.png) | M3-M12 |
+| SQL & Data Handling             | [DBMS_Part3.md](Mission-3/Module-13/DBMS_Part3.md)                               | M3-M13 |
+| SQL Statements & Fns            | [DBMS_Part4.md](Mission-3/Module-14/DBMS_Part4.md)                               | M3-M14 |
+| Practical Exercise (Enrollment) | [DBMS_Part5.md](Mission-3/Module-15/DBMS_Part5.md)                               | M3-M15 |
+| Bookstore Practice              | [DBMS_Part6.md](Mission-3/Module-16/DBMS_Part6.md)                               | M3-M16 |
+| Assignment (Football)           | [README.md](Mission-3/Module-17%20:%20Assignment%20Module/README.md)             | M3-M17 |
+| Assignment SQL                  | [QUERY.sql](Mission-3/Module-17%20:%20Assignment%20Module/QUERY.sql)             | M3-M17 |
+| Prisma Notes                    | [About_Prisma.md](Mission-4/Module-18/About_Prisma.md)                           | M4-M18 |
+| Prisma Schema                   | [schema.prisma](Mission-4/Module-18/prisma/schema.prisma)                        | M4-M18 |
+| Prisma Client Script            | [script.ts](Mission-4/Module-18/src/script.ts)                                   | M4-M18 |
