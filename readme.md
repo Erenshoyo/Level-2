@@ -5,6 +5,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Prisma ORM](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen?style=for-the-badge)
 ![Learning](https://img.shields.io/badge/Learning-Backend%20Engineering-blue?style=for-the-badge)
 
@@ -734,7 +735,7 @@ curl -X POST http://localhost:5000/api/profile \
 | **Authentication**       | Mission-2/Module-8            |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation                      |
 | **Advanced Middleware**  | Mission-2/Module-9            |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens                      |
 | **DBMS Fundamentals**    | Mission-3/Module-11–Module-17 |   ✅   | Relational DBMS concepts, keys, ER diagrams, practice exercises, and assignment work |
-| **ORM + Prisma**        | Mission-4/Module-18           |   ✅   | Prisma schema modeling, generated client queries, and PostgreSQL integration         |
+| **ORM + Prisma**         | Mission-4/Module-18           |   ✅   | Prisma schema modeling, generated client queries, and PostgreSQL integration         |
 
 ## 🎓 Learning Recommendations
 
@@ -760,6 +761,7 @@ curl -X POST http://localhost:5000/api/profile \
 4. Integrate `Mission-2/Module-7` for database-backed applications with PostgreSQL
 5. Review `Mission-3/Module-11` through `Module-17` for relational modeling and DBMS terminology
 6. Explore `Mission-4/Module-18` for Prisma ORM, schema-first modeling, and type-safe database access
+
 ## 📝 Key Files Summary
 
 | Concept                         | File                                                                             | Module |
