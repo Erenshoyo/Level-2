@@ -143,13 +143,15 @@ This repository serves as a practical learning sandbox for mastering backend fun
 - Module-16: Additional practice tasks (bookstore) with insert scripts and analytical queries
 - Module-17: Assignment module — Football Ticket Booking System with `QUERY.sql` and sample data
 
-**Phase 10: Prisma & ORM Fundamentals (Mission-4/Module-18)**
+**Phase 10: Prisma & ORM Fundamentals (Mission-4/Module-18–Module-20)**
 
 - Learn ORM fundamentals using Prisma with PostgreSQL
 - Explore schema-driven database modeling and auto-generated type-safe client code
 - Practice Prisma migrations, schema-first modeling, and generated client queries
 - Study how TypeScript and Prisma work together for safer backend development
 - Build a relational `User`/`Post` model with one-to-many relations and query it via `src/script.ts`
+- Continue Prisma practice in Module-19 with generated client setup and sample user/post operations
+- Advance into Module-20 with a Prisma-backed Express application, user registration, password hashing, and profile relation modeling
 
 ## Key Concepts
 
@@ -354,6 +356,25 @@ This repository serves as a practical learning sandbox for mastering backend fun
     - `src/script.ts` — Prisma client usage example with user and post queries
     - `src/server.ts` — placeholder server entry point for future expansion
     - `prisma/` — Prisma schema and migrations folder
+
+  - `Module-19/`
+    - `Instructions.md` — notes indicating this module follows Module-18 Prisma code
+    - `package.json` — module dependency manifest (Prisma, TypeScript, pg)
+    - `prisma.config.ts` — Prisma configuration pointing to `prisma/schema.prisma`
+    - `src/script.ts` — script demonstrating user creation and nested post queries
+    - `src/server.ts` — empty server entry file placeholder
+    - `prisma/schema.prisma` — User/Post schema with one-to-many relation
+
+  - `Module-20/`
+    - `package.json` — Express, Prisma, bcrypt, cookie-parser, CORS, JSON web token dependencies
+    - `tsconfig.json` — TypeScript compiler configuration for the Express Prisma app
+    - `prisma.config.ts` — Prisma configuration using `prisma/schema`
+    - `src/app.ts` — Express app setup with JSON parsing, CORS, and cookie middleware
+    - `src/server.ts` — app entry point connecting Prisma and launching the server
+    - `src/config/index.ts` — environment configuration loader for ports, database, and JWT settings
+    - `src/lib/prisma.ts` — Prisma client initialization using `PrismaPg` adapter
+    - `src/modules/user/` — user registration route, controller, service, and payload interface
+    - `prisma/schema/` — Prisma model files for `User`, `Profile`, and enum definitions
 
 - `PreVideos/`
   - `Module-2/`
@@ -721,21 +742,23 @@ curl -X POST http://localhost:5000/api/profile \
 
 ## Progress Tracker
 
-| Module                   | Location                      | Status | Description                                                                          |
-| :----------------------- | :---------------------------- | :----: | :----------------------------------------------------------------------------------- |
-| **JavaScript**           | PreVideos/Module-2            |   ✅   | Array utilities, reduce, lookups, grouping, binning                                  |
-| **JavaScript**           | PreVideos/Module-3            |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js`           |
-| **TypeScript**           | Mission-1/Module-1            |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators                      |
-| **TypeScript**           | Mission-1/Module-2            |   ✅   | Generics, interfaces, utility types, mapped & conditional types                      |
-| **TypeScript OOP**       | Mission-1/Module-3            |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards                    |
-| **TypeScript Applied**   | Mission-1/Module-4            |   ✅   | 7 coding challenges, type narrowing blog, utility types blog                         |
-| **Web Fundamentals**     | Mission-2/Module-5            |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns                                |
-| **Backend Project**      | Mission-2/Module-6            |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence                      |
-| **Database Integration** | Mission-2/Module-7            |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations                    |
-| **Authentication**       | Mission-2/Module-8            |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation                      |
-| **Advanced Middleware**  | Mission-2/Module-9            |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens                      |
-| **DBMS Fundamentals**    | Mission-3/Module-11–Module-17 |   ✅   | Relational DBMS concepts, keys, ER diagrams, practice exercises, and assignment work |
-| **ORM + Prisma**         | Mission-4/Module-18           |   ✅   | Prisma schema modeling, generated client queries, and PostgreSQL integration         |
+| Module                   | Location                      | Status | Description                                                                            |
+| :----------------------- | :---------------------------- | :----: | :------------------------------------------------------------------------------------- |
+| **JavaScript**           | PreVideos/Module-2            |   ✅   | Array utilities, reduce, lookups, grouping, binning                                    |
+| **JavaScript**           | PreVideos/Module-3            |   ⚠️   | Stateful/stateless patterns, OOP examples, stack class demo in `MO3VO3.js`             |
+| **TypeScript**           | Mission-1/Module-1            |   ✅   | Type fundamentals, unions, destructuring, spread/rest operators                        |
+| **TypeScript**           | Mission-1/Module-2            |   ✅   | Generics, interfaces, utility types, mapped & conditional types                        |
+| **TypeScript OOP**       | Mission-1/Module-3            |   ✅   | Classes, access modifiers, inheritance, polymorphism, type guards                      |
+| **TypeScript Applied**   | Mission-1/Module-4            |   ✅   | 7 coding challenges, type narrowing blog, utility types blog                           |
+| **Web Fundamentals**     | Mission-2/Module-5            |   ✅   | HTTP protocol, IIFE, CommonJS vs ESM, module patterns                                  |
+| **Backend Project**      | Mission-2/Module-6            |   ✅   | HTTP server, MVC architecture, type-safe APIs, JSON persistence                        |
+| **Database Integration** | Mission-2/Module-7            |   ✅   | SQL basics, PostgreSQL, Express + DB integration, CRUD operations                      |
+| **Authentication**       | Mission-2/Module-8            |   ✅   | JWT login, bcrypt password hashing, user CRUD, profile creation                        |
+| **Advanced Middleware**  | Mission-2/Module-9            |   ✅   | Role-based auth, request logging, CORS, cookies, refresh tokens                        |
+| **DBMS Fundamentals**    | Mission-3/Module-11–Module-17 |   ✅   | Relational DBMS concepts, keys, ER diagrams, practice exercises, and assignment work   |
+| **Prisma Recap**         | Mission-4/Module-19           |   ✅   | User/Post Prisma script, generated client usage, and schema-driven model examples      |
+| **Prisma + Express**     | Mission-4/Module-20           |   ✅   | Prisma-backed Express server, user registration, bcrypt hashing, and profile relations |
+| **ORM + Prisma**         | Mission-4/Module-18           |   ✅   | Prisma schema modeling, generated client queries, and PostgreSQL integration           |
 
 ## 🎓 Learning Recommendations
 
