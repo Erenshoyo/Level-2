@@ -11,7 +11,7 @@ enum Role {
 
 enum PostStatus {
   DRAFT
-  PUSBLISHED
+  PUBLISHED
   ARCHIVED
 }
 
