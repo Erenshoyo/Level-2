@@ -1,4 +1,8 @@
-import { ICreatePostPayload, IUpdatePostPayload } from "./post.interface";
+import {
+  ICreatePostPayload,
+  IPostQuery,
+  IUpdatePostPayload,
+} from "./post.interface";
 import { prisma } from "../../lib/prisma";
 import { CommentStatus, PostStatus } from "../../../generated/prisma/enums";
 
@@ -12,8 +16,134 @@ const createPost = async (payload: ICreatePostPayload, userId: string) => {
 
   return result;
 };
-const getAllPosts = async () => {
+
+const getAllPosts = async (query: IPostQuery) => {
+  const limit = query.limit ? Number(query.limit) : 10;
+  const page = query.page ? Number(query.page) : 1;
+  const skip = (page - 1) * limit;
+  const sortBy = query.sortBy ? query.sortBy : "title";
+  const sortOrder = query.sortOrder ? query.sortOrder : "desc";
+
   const posts = await prisma.post.findMany({
+    //? Filtering / Exact Match with AND operator
+    // where: {
+    //   AND: [
+    //     {
+    //       title: "",
+    //     },
+    //     {
+    //       content: "",
+    //     },
+    //   ],
+    // },
+
+    //? Searching / Partial Match
+    // where: {
+    //? Ideal case for partial search using OR operator
+    //   OR: [
+    //     {
+    //       title: {
+    //         contains: "ronaldo",
+    //         mode: "insensitive",
+    //       },
+    //     },
+    //     {
+    //       content: {
+    //         contains: "time",
+    //       },
+    //     },
+    //   ],
+
+    //! Not ideal for partial search
+    // title: {
+    //   contains: "ronaldo",
+    //   mode: "insensitive",
+    // },
+
+    // content:{
+    //   contains:"time"
+    // }
+    // },
+    // TODO: Combining searching(OR operator) and filtering(AND operator)
+    // where: {
+    //   //? Filtering and searching combined
+    //   AND: [
+    //     //? Searching
+    //     {
+    //       OR: [
+    //         {
+    //           title: {
+    //             contains: "Ron",
+    //             mode: "insensitive",
+    //           },
+    //         },
+    //         {
+    //           content: {
+    //             contains: "time",
+    //             mode: "insensitive",
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     //? Filtering
+    //     {
+    //       title: "Ronaldo Nazario",
+    //     },
+    //     {
+    //       content: "Brazil's greatest number 9 of all time",
+    //     },
+    //   ],
+    // },
+
+    // TODO: Pagination implementation
+    // take: 1,
+    // skip: 4,
+
+    //? Page-4, Limit/take -> 1 => skip : (page - 1) * limit =>
+
+    // TODO: Sorting Implementation
+    // orderBy: {
+    //   title: "asc",
+    //   content: "desc",
+    //? FieldName : "asc"/"desc"
+    // },
+
+    where: {
+      AND: [
+        //? Search Term
+        query.searchTerm
+          ? {
+              OR: [
+                {
+                  title: {
+                    contains: query.searchTerm,
+                    mode: "insensitive",
+                  },
+                },
+                {
+                  content: {
+                    contains: query.searchTerm,
+                    mode: "insensitive",
+                  },
+                },
+              ],
+            }
+          : {},
+        //? Title filtering
+        query.title ? { title: query.title } : {},
+        //? Content filtering
+        query.content ? { content: query.content } : {},
+      ],
+    },
+
+    take: limit,
+    skip: skip,
+
+    orderBy: {
+      //sortBy : sortOrder
+      [sortBy]: sortOrder,
+    },
+
     include: {
       author: {
         omit: {
