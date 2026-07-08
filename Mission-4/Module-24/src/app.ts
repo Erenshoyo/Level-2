@@ -8,6 +8,7 @@ import { postRoutes } from "./modules/post/post.route";
 import { commentRoutes } from "./modules/comment/comment.route";
 import { notFound } from "./middleware/notFound";
 import { globalErrorHandler } from "./middleware/globalErrorHandler";
+import { subscriptionRoutes } from "./modules/subscription/subscription.route";
 
 const app: Application = express();
 
@@ -32,6 +33,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/subscription", subscriptionRoutes)
 
 // app.use((req: Request, res: Response) => {
 //   res.status(404).json({
@@ -40,7 +42,6 @@ app.use("/api/comments", commentRoutes);
 //     date: Date(),
 //   });
 // });
-
 app.use(notFound);
 
 // app.use((err: any, req: Request, res: Response, next: NextFunction) => {
@@ -51,7 +52,6 @@ app.use(notFound);
 //     error: err.stack,
 //   });
 // });
-
 app.use(globalErrorHandler);
 
 export default app;
